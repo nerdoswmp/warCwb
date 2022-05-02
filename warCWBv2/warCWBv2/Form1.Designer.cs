@@ -92,6 +92,7 @@
             this.btnOff.TabIndex = 3;
             this.btnOff.Text = "Offline";
             this.btnOff.UseVisualStyleBackColor = false;
+            this.btnOff.Click += new System.EventHandler(this.btnOff_Click);
             // 
             // Form1
             // 

@@ -55,6 +55,13 @@ namespace warCWBv2
             volume.Visible = true;
             playGreca(0);
         }
+
+        private void btnOff_Click(object sender, EventArgs e)
+        {
+            MapForm mapa = new MapForm();
+            mapa.Show();
+            this.Hide();
+        }
     }
     
 }
