@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,13 +14,13 @@ namespace warCWBv2
         private Zona zona { get; }
         private int troops { get; set; }
         private bool bonus { get; }
-        private string mapImg { get; set; }
+        private Bitmap mapImg { get; set; }
         private string root = Directory.GetCurrentDirectory();
-        public Territorio(bool bonus, string img, Zona zona) 
+        public Territorio(bool bonus, Bitmap img, Zona zona) 
         { 
             this.zona = zona;
             this.bonus = bonus;
-            this.mapImg = root.Replace(@"\bin\Debug", "") + img;
+            this.mapImg = img;
         }
 
         public bool InsertTerr(Territorio territorio)

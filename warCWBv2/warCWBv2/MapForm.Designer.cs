@@ -28,33 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pb = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pb)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pb
             // 
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(454, 720);
-            this.panel1.TabIndex = 0;
+            this.pb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb.Location = new System.Drawing.Point(0, 0);
+            this.pb.Name = "pb";
+            this.pb.Size = new System.Drawing.Size(454, 720);
+            this.pb.TabIndex = 0;
+            this.pb.TabStop = false;
             // 
             // MapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 720);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pb);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MapForm";
             this.Text = "MapForm";
             this.TransparencyKey = System.Drawing.Color.Turquoise;
             this.Load += new System.EventHandler(this.MapForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pb)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pb;
     }
 }
