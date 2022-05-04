@@ -15,7 +15,6 @@ namespace warCWBv2
         private int troops { get; set; }
         private bool bonus { get; }
         private Bitmap mapImg { get; set; }
-        private string root = Directory.GetCurrentDirectory();
         public Territorio(bool bonus, Bitmap img, Zona zona) 
         { 
             this.zona = zona;

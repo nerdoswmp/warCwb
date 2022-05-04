@@ -17,5 +17,6 @@ namespace warCWBv2
         PlaceTroops = 0,
         Attack = 1,
         MoveTroops = 2,
+        Waiting = 3
     }
 }

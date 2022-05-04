@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.IO;
+using System.Reflection;
 
 namespace warCWBv2
 {
@@ -28,31 +29,42 @@ namespace warCWBv2
             g.Clear(Color.White);
             pb.Refresh();
 
+            List<Bitmap> list = new List<Bitmap>();
+
             Timer tm = new Timer();
             tm.Interval = 50;
 
             Zona cic = new Zona(3);
-            //Territorio t = new Territorio(true, Properties.Resources.mapa_cwb_outline, cic);
+            Territorio t = new Territorio(true, Properties.Resources._1mapa_cwb_outline, cic);
 
-            string filepath = Directory.GetCurrentDirectory().Replace(@"\bin\Debug", @"\Resources\assets_mapa");
-            DirectoryInfo d = new DirectoryInfo(filepath);
+            //string filepath = Directory.GetCurrentDirectory().Replace(@"\bin\Debug", @"\Resources\assets_mapa");
+            //DirectoryInfo d = new DirectoryInfo(filepath);
 
-            foreach (var file in d.GetFiles("*.png"))
+            foreach (var prop in typeof(Properties.Resources).GetRuntimeProperties())
             {
-                Directory.Move(file.FullName, filepath + "\\TextFiles\\" + file.Name);
-            }
+                Console.WriteLine(prop.Name);
+                var bmp = prop.GetValue(prop.GetType());
+                if (bmp != null)
+                {
+                    if (bmp.GetType() == pb.Image.GetType() && prop.Name.StartsWith("_"))
+                    {
+                        Console.WriteLine(bmp);
+                        Console.WriteLine(bmp.GetType());
+                        list.Add(new Bitmap((Bitmap)bmp));
+                        //g.DrawImage(x, new RectangleF(0, 0, pb.Width, pb.Height), new RectangleF(0, 0, x.Width, x.Height), GraphicsUnit.Pixel);
+                    }
+                }
 
-            //Bitmap bg = Properties.Resources.mapa_cwb_outline;
-            var aguaverde = Properties.Resources.AGUA_VERDE; 
-            var portao = Properties.Resources.PORTAO;
+            }
 
             tm.Tick += delegate
             {
                 g.Clear(Color.White);
 
-                //g.DrawImage(bg, new RectangleF(0, 0, pb.Width, pb.Height), new RectangleF(0, 0, aguaverde.Width, aguaverde.Height), GraphicsUnit.Pixel);
-                g.DrawImage(aguaverde, new RectangleF(0, 0, pb.Width, pb.Height), new RectangleF(0, 0, aguaverde.Width, aguaverde.Height), GraphicsUnit.Pixel);
-                g.DrawImage(portao, new RectangleF(0, 0, pb.Width, pb.Height), new RectangleF(0, 0, aguaverde.Width, aguaverde.Height), GraphicsUnit.Pixel);
+                foreach (var map in list)
+                {
+                    g.DrawImage(map, new RectangleF(0, 0, pb.Width, pb.Height), new RectangleF(0, 0, map.Width, map.Height), GraphicsUnit.Pixel);
+                }
 
                 pb.Refresh();
             };
