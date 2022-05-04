@@ -32,7 +32,7 @@ namespace warCWBv2
             tm.Interval = 50;
 
             Zona cic = new Zona(3);
-            Territorio t = new Territorio(true, Properties.Resources.mapa_cwb_outline, cic);
+            //Territorio t = new Territorio(true, Properties.Resources.mapa_cwb_outline, cic);
 
             string filepath = Directory.GetCurrentDirectory().Replace(@"\bin\Debug", @"\Resources\assets_mapa");
             DirectoryInfo d = new DirectoryInfo(filepath);
@@ -42,7 +42,7 @@ namespace warCWBv2
                 Directory.Move(file.FullName, filepath + "\\TextFiles\\" + file.Name);
             }
 
-            Bitmap bg = Properties.Resources.mapa_cwb_outline;
+            //Bitmap bg = Properties.Resources.mapa_cwb_outline;
             var aguaverde = Properties.Resources.AGUA_VERDE; 
             var portao = Properties.Resources.PORTAO;
 
@@ -50,7 +50,7 @@ namespace warCWBv2
             {
                 g.Clear(Color.White);
 
-                g.DrawImage(bg, new RectangleF(0, 0, pb.Width, pb.Height), new RectangleF(0, 0, aguaverde.Width, aguaverde.Height), GraphicsUnit.Pixel);
+                //g.DrawImage(bg, new RectangleF(0, 0, pb.Width, pb.Height), new RectangleF(0, 0, aguaverde.Width, aguaverde.Height), GraphicsUnit.Pixel);
                 g.DrawImage(aguaverde, new RectangleF(0, 0, pb.Width, pb.Height), new RectangleF(0, 0, aguaverde.Width, aguaverde.Height), GraphicsUnit.Pixel);
                 g.DrawImage(portao, new RectangleF(0, 0, pb.Width, pb.Height), new RectangleF(0, 0, aguaverde.Width, aguaverde.Height), GraphicsUnit.Pixel);
 
