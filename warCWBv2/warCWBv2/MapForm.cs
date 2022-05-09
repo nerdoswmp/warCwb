@@ -29,16 +29,10 @@ namespace warCWBv2
             g.Clear(Color.White);
             pb.Refresh();
 
-            List<Bitmap> list = new List<Bitmap>();
+            Zona cic = new Zona(3);
 
             Timer tm = new Timer();
-            tm.Interval = 50;
-
-            Zona cic = new Zona(3);
-            Territorio t = new Territorio(true, Properties.Resources._1mapa_cwb_outline, cic);
-
-            //string filepath = Directory.GetCurrentDirectory().Replace(@"\bin\Debug", @"\Resources\assets_mapa");
-            //DirectoryInfo d = new DirectoryInfo(filepath);
+            tm.Interval = 10;
 
             foreach (var prop in typeof(Properties.Resources).GetRuntimeProperties())
             {
@@ -50,20 +44,26 @@ namespace warCWBv2
                     {
                         Console.WriteLine(bmp);
                         Console.WriteLine(bmp.GetType());
-                        list.Add(new Bitmap((Bitmap)bmp));
-                        //g.DrawImage(x, new RectangleF(0, 0, pb.Width, pb.Height), new RectangleF(0, 0, x.Width, x.Height), GraphicsUnit.Pixel);
+                        var img = (Bitmap)bmp;
+                        territorioList.Add(new Territorio(true, img, cic));
                     }
                 }
 
             }
 
+            var rec = new RectangleF(0, 0, pb.Width, pb.Height);
+            var outline = Properties.Resources._1mapa_cwb_outline;
+            var outrec = new RectangleF(0, 0, outline.Width, outline.Height);
+
             tm.Tick += delegate
             {
                 g.Clear(Color.White);
 
-                foreach (var map in list)
+                g.DrawImage(outline, rec, outrec, GraphicsUnit.Pixel);
+                foreach (var map in territorioList)
                 {
-                    g.DrawImage(map, new RectangleF(0, 0, pb.Width, pb.Height), new RectangleF(0, 0, map.Width, map.Height), GraphicsUnit.Pixel);
+                    var bmpmap = map.getBitmap();
+                    g.DrawImage(bmpmap, rec, outrec, GraphicsUnit.Pixel);
                 }
 
                 pb.Refresh();

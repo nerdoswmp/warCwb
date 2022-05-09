@@ -32,6 +32,10 @@ namespace warCWBv2
             return false;
         }
 
+        public Bitmap getBitmap()
+        {
+            return mapImg;
+        }
         public List<Territorio> GetAdjacente()
         {
             return terAdjacente;
