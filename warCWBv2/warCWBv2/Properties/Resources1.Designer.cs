@@ -453,9 +453,25 @@ namespace warCWBv2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap mapa_cwb_outline {
             get {
                 object obj = ResourceManager.GetObject("mapa_cwb_outline", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap login {
+            get {
+                object obj = ResourceManager.GetObject("login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login2 {
+            get {
+                object obj = ResourceManager.GetObject("login2", resourceCulture);
+>>>>>>> cc607ca05a73afe49578952ec257aaa24467f291
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -466,6 +482,16 @@ namespace warCWBv2.Properties {
         internal static System.Drawing.Bitmap mute {
             get {
                 object obj = ResourceManager.GetObject("mute", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seta {
+            get {
+                object obj = ResourceManager.GetObject("seta", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

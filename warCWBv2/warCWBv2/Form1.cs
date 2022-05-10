@@ -62,6 +62,14 @@ namespace warCWBv2
             mapa.Show();
             this.Hide();
         }
+
+        private void btnOn_Click(object sender, EventArgs e)
+        {
+            
+            Form2 form = new Form2();
+            form.Show();
+            this.Hide();
+        }
     }
     
 }
