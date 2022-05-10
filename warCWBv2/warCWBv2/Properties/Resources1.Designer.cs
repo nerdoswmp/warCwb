@@ -63,16 +63,6 @@ namespace warCWBv2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1mapa_cwb_outline {
-            get {
-                object obj = ResourceManager.GetObject("_1mapa_cwb_outline", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _AGUA_VERDE {
             get {
                 object obj = ResourceManager.GetObject("_AGUA VERDE", resourceCulture);
@@ -456,6 +446,16 @@ namespace warCWBv2.Properties {
         internal static System.Drawing.Bitmap imagemPrincipal_png {
             get {
                 object obj = ResourceManager.GetObject("imagemPrincipal.png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mapa_cwb_outline {
+            get {
+                object obj = ResourceManager.GetObject("mapa_cwb_outline", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

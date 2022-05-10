@@ -12,15 +12,18 @@ namespace warCWBv2
     {
         private List<Territorio> terAdjacente = new List<Territorio>();
         private Zona zona { get; }
-        private int troops { get; set; }
-        private bool bonus { get; }
-        private Bitmap mapImg { get; set; }
-        public Territorio(bool bonus, Bitmap img, Zona zona) 
-        { 
+        private int troops { get => this.troops; set => this.troops = value;}
+        private bool bonus { get => this.bonus; set => this.bonus = value; }
+
+        private Bitmap mapImg;
+        private string name;
+        public Territorio(bool bonus, Bitmap img, Zona zona, string name)
+        {
             this.zona = zona;
             this.bonus = bonus;
             this.mapImg = img;
-        }
+            this.name = name;
+         }
 
         public bool InsertTerr(Territorio territorio)
         {
@@ -32,7 +35,12 @@ namespace warCWBv2
             return false;
         }
 
-        public Bitmap getBitmap()
+        public string GetName()
+        {
+            return name;
+        }
+
+        public Bitmap GetBitmap()
         {
             return mapImg;
         }
