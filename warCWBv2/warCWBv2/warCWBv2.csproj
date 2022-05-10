@@ -149,6 +149,9 @@
     <None Include="Resources\volume.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\seta.png" />
+    <None Include="Resources\login2.png" />
+    <None Include="Resources\login.png" />
     <None Include="Resources\assets_mapa\1mapa cwb outline.png" />
     <Content Include="Resources\assets_mapa\AGUA VERDE.png" />
     <Content Include="Resources\assets_mapa\ALTO BOQUEIRAO.png" />

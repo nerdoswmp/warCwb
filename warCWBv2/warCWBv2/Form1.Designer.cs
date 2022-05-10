@@ -50,6 +50,7 @@
             this.btnOn.TabIndex = 0;
             this.btnOn.Text = "Online";
             this.btnOn.UseVisualStyleBackColor = false;
+            this.btnOn.Click += new System.EventHandler(this.btnOn_Click);
             // 
             // volume
             // 
