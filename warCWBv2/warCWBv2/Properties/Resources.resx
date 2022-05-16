@@ -121,7 +121,6 @@
   <data name="_UBERABA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\UBERABA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="mapa_cwb_outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\1mapa cwb outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,10 +162,9 @@
   </data>
   <data name="_CACHOEIRA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\CACHOEIRA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+  </data>
   <data name="_SANTA FELICIDADE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\SANTA FELICIDADE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> cc607ca05a73afe49578952ec257aaa24467f291
   </data>
   <data name="_CAJURU" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\CAJURU.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -174,32 +172,14 @@
   <data name="_PINHEIRINHO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\PINHEIRINHO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_BOA VISTA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\BOA VISTA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="_JARDIM BOTANICO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\JARDIM BOTANICO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_JARDIM DAS AMERICAS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\JARDIM DAS AMERICAS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_BOQUEIRAO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\BOQUEIRAO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_ALTO DA XV" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\ALTO DA XV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="_TARUMA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\TARUMA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_AGUA VERDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\AGUA VERDE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_CACHOEIRA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\CACHOEIRA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="login2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -207,17 +187,11 @@
   <data name="_FAZENDINHA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\FAZENDINHA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_CABRAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\CABRAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_PILARZINHO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\PILARZINHO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="trilha" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trilha.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="imagemPrincipal.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagemPrincipal.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -237,20 +211,11 @@
   <data name="_CAMPO DE SANTANA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\CAMPO DE SANTANA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="volume" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\volume.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_ALTO BOQUEIRAO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\ALTO BOQUEIRAO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="_REBOUCAS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\REBOUCAS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_GANCHINHO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\GANCHINHO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_BUTIATUVINHA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\BUTIATUVINHA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_PASSAUNA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\PASSAUNA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -258,17 +223,11 @@
   <data name="_NOVO MUNDO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\NOVO MUNDO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1mapa_cwb_outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\1mapa cwb outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="_CIC" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\CIC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_SITIO_CERCADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\SITIO CERCADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mute" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mute.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_ORLEANS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\ORLEANS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -290,9 +249,6 @@
   </data>
   <data name="_SANTA CANDIDA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\SANTA CANDIDA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_BATEL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\BATEL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_MERCES" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\MERCES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

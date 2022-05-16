@@ -17,6 +17,7 @@ namespace warCWBv2
     {
         Graphics g;
         List<Territorio> territorioList = new List<Territorio>();
+        List<Zona> zonas = GetZonas();
         public MapForm()
         {
             InitializeComponent();
@@ -34,24 +35,29 @@ namespace warCWBv2
 
             foreach (var prop in typeof(Properties.Resources).GetRuntimeProperties())
             {
-                Console.WriteLine(prop.Name);
+                //Console.WriteLine(prop.Name);
                 var bmp = prop.GetValue(prop.GetType());
                 if (bmp != null)
                 {
                     if (bmp.GetType() == pb.Image.GetType() && prop.Name.StartsWith("_"))
                     {
-                        Console.WriteLine(bmp);
-                        Console.WriteLine(bmp.GetType());
-                        var img = (Bitmap)bmp;
-                        territorioList.Add(CreateTerritorio(img, prop.Name));
+                        //Console.WriteLine(bmp);
+                        territorioList.Add(CreateTerritorio((Bitmap)bmp, prop.Name));
                     }
                 }
 
             }
+            InsertAdjacent(territorioList);
 
             var rec = new RectangleF(0, 0, pb.Width, pb.Height);
             var outline = Properties.Resources.mapa_cwb_outline;
             var outrec = new RectangleF(0, 0, outline.Width, outline.Height);
+
+
+            //foreach(var t in territorioList[0].GetAdjacente())
+            //{
+            //    Console.WriteLine(t.GetName());
+            //}
 
             tm.Tick += delegate
             {
@@ -60,8 +66,7 @@ namespace warCWBv2
                 g.DrawImage(outline, rec, outrec, GraphicsUnit.Pixel);
                 foreach (var map in territorioList)
                 {
-                    var bmpmap = map.GetBitmap();
-                    g.DrawImage(bmpmap, rec, outrec, GraphicsUnit.Pixel);
+                    g.DrawImage(map.GetBitmap(), rec, outrec, GraphicsUnit.Pixel);
                 }
 
                 pb.Refresh();
@@ -70,7 +75,7 @@ namespace warCWBv2
         }
 
 
-        public List<Zona> GetZonas()
+        public static List<Zona> GetZonas()
         {
             List<Zona> list = new List<Zona>();
             Zona cic = new Zona(3);
@@ -87,12 +92,10 @@ namespace warCWBv2
 
             return list;
         }
-
         public Territorio CreateTerritorio(Bitmap img, string name)
         {
             List<Territorio> list = new List<Territorio>();
-            List<Zona> zonas = GetZonas();
-
+            
             // trigger warning: murilo moment
             // YANDERE DEV MOMENT assassinado Moll
             switch (name)
@@ -255,7 +258,6 @@ namespace warCWBv2
 
             return list[0];
         }
-
         public Territorio FindTerritorio(List<Territorio> territorios, string name)
         {
             return territorios.Where(t => t.GetName() == name).Single();
@@ -263,9 +265,10 @@ namespace warCWBv2
         public void InsertAdjacent(List<Territorio> territorios)
         {
             var t = territorios;
-            FindTerritorio(t, "agua verde").InsertTerr(FindTerritorio(territorios, "batel"));
-            FindTerritorio(t, "agua verde").InsertTerr(FindTerritorio(territorios, "portao"));
-            // substituir por foreach para o territorio inicial e o adjacente maybe????
+            FindTerritorio(t, "aguaverde").InsertTerr(new Territorio[]{ FindTerritorio(territorios, "batel"), FindTerritorio(territorios, "portao"),
+                FindTerritorio(territorios, "parolin"), FindTerritorio(territorios, "fazendinha"), FindTerritorio(territorios, "campocomprido"),
+                FindTerritorio(territorios, "centro"), FindTerritorio(territorios, "reboucas")});
+            // fazer para cada um dos territorios!!!!!!!!!!!
         }
     }
 

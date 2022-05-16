@@ -11,9 +11,9 @@ namespace warCWBv2
     public class Territorio
     {
         private List<Territorio> terAdjacente = new List<Territorio>();
-        private Zona zona { get; }
-        private int troops { get => this.troops; set => this.troops = value;}
-        private bool bonus { get => this.bonus; set => this.bonus = value; }
+        private Zona zona;
+        private int troops;
+        private bool bonus;
 
         private Bitmap mapImg;
         private string name;
@@ -22,24 +22,41 @@ namespace warCWBv2
             this.zona = zona;
             this.bonus = bonus;
             this.mapImg = img;
-            this.name = name;
+            this.name = name.ToLower().Replace("_", "");
          }
 
-        public bool InsertTerr(Territorio territorio)
+        public void InsertTerr(Territorio[] territorios)
         {
-            if (!terAdjacente.Contains(territorio))
+            foreach( var t in territorios)
             {
-                terAdjacente.Add(territorio);
-                return true;
+                if (!terAdjacente.Contains(t))
+                {
+                    terAdjacente.Add(t);
+                }
             }
-            return false;
         }
 
+        public void AddTroops(int t)
+        {
+            troops += t;
+        }
+        public int GetTroops()
+        {
+            return troops;
+        }
+
+        public bool GetBonus()
+        {
+            return bonus;
+        }
         public string GetName()
         {
             return name;
         }
-
+        public Zona GetZona()
+        {
+            return zona;
+        }
         public Bitmap GetBitmap()
         {
             return mapImg;
