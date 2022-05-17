@@ -15,9 +15,9 @@ namespace warCWBv2
         private int troops;
         private bool bonus;
 
-        private Bitmap mapImg;
+        private object mapImg;
         private string name;
-        public Territorio(bool bonus, Bitmap img, Zona zona, string name)
+        public Territorio(bool bonus, object img, Zona zona, string name)
         {
             this.zona = zona;
             this.bonus = bonus;
@@ -57,7 +57,7 @@ namespace warCWBv2
         {
             return zona;
         }
-        public Bitmap GetBitmap()
+        public object GetBitmap()
         {
             return mapImg;
         }

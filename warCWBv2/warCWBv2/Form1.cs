@@ -39,6 +39,15 @@ namespace warCWBv2
         private void Form1_Load(object sender, EventArgs e)
         {
             playGreca(0);
+            // Não mexa kkkkkkkk
+            var screen = Properties.Resources.imagemPrincipal_png;
+            Bitmap bmp = new Bitmap(Width, Height);
+            var g = Graphics.FromImage(bmp);
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
+            g.DrawImage(screen, new Rectangle(Point.Empty, this.Size));
+            this.BackgroundImage = bmp;
+            screen.Dispose();
+            GC.Collect(2);
         }
 
         private void volume_Click(object sender, EventArgs e)

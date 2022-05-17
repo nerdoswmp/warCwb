@@ -83,6 +83,7 @@
     <Compile Include="MapForm.Designer.cs">
       <DependentUpon>MapForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MapManager.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -154,6 +155,7 @@
     <None Include="Resources\login2.png" />
     <None Include="Resources\login.png" />
     <None Include="Resources\assets_mapa\1mapa cwb outline.png" />
+    <None Include="fullmap.bmp" />
     <Content Include="Resources\assets_mapa\AGUA VERDE.png" />
     <Content Include="Resources\assets_mapa\ALTO BOQUEIRAO.png" />
     <Content Include="Resources\assets_mapa\ALTO DA XV.png" />

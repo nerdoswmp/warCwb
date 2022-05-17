@@ -30,48 +30,23 @@ namespace warCWBv2
             g.Clear(Color.White);
             pb.Refresh();
 
+            MapManager mm = new MapManager();
+
             Timer tm = new Timer();
-            tm.Interval = 10;
-
-            foreach (var prop in typeof(Properties.Resources).GetRuntimeProperties())
-            {
-                //Console.WriteLine(prop.Name);
-                var bmp = prop.GetValue(prop.GetType());
-                if (bmp != null)
-                {
-                    if (bmp.GetType() == pb.Image.GetType() && prop.Name.StartsWith("_"))
-                    {
-                        //Console.WriteLine(bmp);
-                        territorioList.Add(CreateTerritorio((Bitmap)bmp, prop.Name));
-                    }
-                }
-
-            }
-            InsertAdjacent(territorioList);
-
-            var rec = new RectangleF(0, 0, pb.Width, pb.Height);
-            var outline = Properties.Resources.mapa_cwb_outline;
-            var outrec = new RectangleF(0, 0, outline.Width, outline.Height);
-
-
-            //foreach(var t in territorioList[0].GetAdjacente())
-            //{
-            //    Console.WriteLine(t.GetName());
-            //}
+            tm.Interval = 50;
 
             tm.Tick += delegate
             {
-                g.Clear(Color.White);
-
-                g.DrawImage(outline, rec, outrec, GraphicsUnit.Pixel);
-                foreach (var map in territorioList)
-                {
-                    g.DrawImage(map.GetBitmap(), rec, outrec, GraphicsUnit.Pixel);
-                }
-
-                pb.Refresh();
+                pb.Image = mm.Map;
             };
             tm.Start();
+
+            pb.MouseDown += (o, mea) =>
+            {
+                mm.Initialize();
+                mm.Clear(Color.Cyan, mea.Location);
+                mm.Close();
+            };
         }
 
 
@@ -92,7 +67,7 @@ namespace warCWBv2
 
             return list;
         }
-        public Territorio CreateTerritorio(Bitmap img, string name)
+        public Territorio CreateTerritorio(object img, string name)
         {
             List<Territorio> list = new List<Territorio>();
             
