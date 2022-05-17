@@ -11,7 +11,7 @@ namespace warCWBv2
 {
     public class MapManager
     {
-        public Bitmap Map { get; private set; } = Properties.Resources.fullmap;
+        public Bitmap Map { get; private set; } = Properties.Resources.mapfull;
         private byte[] bytes = null;
         private int stride = 0;
         private BitmapData data = null;
