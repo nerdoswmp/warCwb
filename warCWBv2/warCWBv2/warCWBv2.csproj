@@ -149,6 +149,7 @@
     <None Include="Resources\volume.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\login1.png" />
     <None Include="Resources\seta.png" />
     <None Include="Resources\login2.png" />
     <None Include="Resources\login.png" />
