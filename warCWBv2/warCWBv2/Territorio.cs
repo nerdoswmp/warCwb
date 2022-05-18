@@ -15,13 +15,14 @@ namespace warCWBv2
         private int troops;
         private bool bonus;
 
-        private object mapImg;
+        private Point coord;
+        private object a;
         private string name;
-        public Territorio(bool bonus, object img, Zona zona, string name)
+        public Territorio(bool bonus, object coord, Zona zona, string name)
         {
             this.zona = zona;
             this.bonus = bonus;
-            this.mapImg = img;
+            this.a = coord;
             this.name = name.ToLower().Replace("_", "");
          }
 
@@ -57,9 +58,9 @@ namespace warCWBv2
         {
             return zona;
         }
-        public object GetBitmap()
+        public Point GetCoord()
         {
-            return mapImg;
+            return coord;
         }
         public List<Territorio> GetAdjacente()
         {

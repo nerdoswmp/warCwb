@@ -43,8 +43,9 @@ namespace warCWBv2
 
             pb.MouseDown += (o, mea) =>
             {
+                Console.WriteLine(mea.Location.ToString());
                 mm.Initialize();
-                mm.Clear(Color.Cyan, mea.Location);
+                mm.Clear(Color.Green, mea.Location);
                 mm.Close();
             };
         }
@@ -67,169 +68,168 @@ namespace warCWBv2
 
             return list;
         }
+
+        // reescrever essa parte inteira
         public Territorio CreateTerritorio(object img, string name)
         {
             List<Territorio> list = new List<Territorio>();
             
             // trigger warning: murilo moment
             // YANDERE DEV MOMENT assassinado Moll
-            switch (name)
-            {
-                case "_AGUA_VERDE":
-                    list.Add(new Territorio(false, img, zonas[1], name));
-                    zonas[1].InsertTerr(list[0]);
-                    break;
-                case "_ALTO_BOQUEIRAO":
-                    list.Add(new Territorio(false, img, zonas[5], name));
-                    zonas[5].InsertTerr(list[0]);
-                    break;
-                case "_ALTO_DA_XV":
-                    list.Add(new Territorio(false, img, zonas[7], name));
-                    zonas[7].InsertTerr(list[0]);
-                    break;
-                case "_BATEL":
-                    list.Add(new Territorio(false, img, zonas[7], name));
-                    zonas[7].InsertTerr(list[0]);
-                    break;
-                case "_BOA_VISTA":
-                    list.Add(new Territorio(false, img, zonas[8], name));
-                    zonas[8].InsertTerr(list[0]);
-                    break;
-                case "_BOQUEIRAO":
-                    list.Add(new Territorio(false, img, zonas[5], name));
-                    zonas[5].InsertTerr(list[0]);
-                    break;
-                case "_BUTIATUVINHA":
-                    list.Add(new Territorio(false, img, zonas[4], name));
-                    zonas[4].InsertTerr(list[0]);
-                    break;
-                case "_CABRAL":
-                    list.Add(new Territorio(false, img, zonas[7], name));
-                    zonas[7].InsertTerr(list[0]);
-                    break;
-                case "_CACHOEIRA":
-                    list.Add(new Territorio(false, img, zonas[8], name));
-                    zonas[8].InsertTerr(list[0]);
-                    break;
-                case "_CAJURU":
-                    list.Add(new Territorio(false, img, zonas[6], name));
-                    zonas[6].InsertTerr(list[0]);
-                    break;
-                case "_CAMPO_COMPRIDO":
-                    list.Add(new Territorio(false, img, zonas[4], name));
-                    zonas[4].InsertTerr(list[0]);
-                    break;
-                case "_CAMPO_DE_SANTANA":
-                    list.Add(new Territorio(false, img, zonas[3], name));
-                    zonas[3].InsertTerr(list[0]);
-                    break;
-                case "_CENTRO":
-                    list.Add(new Territorio(false, img, zonas[7], name));
-                    zonas[7].InsertTerr(list[0]);
-                    break;
-                case "_CENTRO_CIVICO":
-                    list.Add(new Territorio(false, img, zonas[7], name));
-                    zonas[7].InsertTerr(list[0]);
-                    break;
-                case "_CIC":
-                    list.Add(new Territorio(false, img, zonas[0], name));
-                    zonas[0].InsertTerr(list[0]);
-                    break;
-                case "_FAZENDINHA":
-                    list.Add(new Territorio(false, img, zonas[1], name));
-                    zonas[1].InsertTerr(list[0]);
-                    break;
-                case "_GANCHINHO":
-                    list.Add(new Territorio(false, img, zonas[2], name));
-                    zonas[2].InsertTerr(list[0]);
-                    break;
-                case "_JARDIM_BOTANICO":
-                    list.Add(new Territorio(false, img, zonas[7], name));
-                    zonas[7].InsertTerr(list[0]);
-                    break;
-                case "_JARDIM_DAS_AMERICAS":
-                    list.Add(new Territorio(false, img, zonas[5], name));
-                    zonas[5].InsertTerr(list[0]);
-                    break;
-                case "_MERCES":
-                    list.Add(new Territorio(false, img, zonas[7], name));
-                    zonas[7].InsertTerr(list[0]);
-                    break;
-                case "_NOVO_MUNDO":
-                    list.Add(new Territorio(false, img, zonas[1], name));
-                    zonas[1].InsertTerr(list[0]);
-                    break;
-                case "_ORLEANS":
-                    list.Add(new Territorio(false, img, zonas[4], name));
-                    zonas[4].InsertTerr(list[0]);
-                    break;
-                case "_PAROLIN":
-                    list.Add(new Territorio(false, img, zonas[1], name));
-                    zonas[1].InsertTerr(list[0]);
-                    break;
-                case "_PASSAUNA":
-                    list.Add(new Territorio(false, img, zonas[0], name));
-                    zonas[0].InsertTerr(list[0]);
-                    break;
-                case "_PILARZINHO":
-                    list.Add(new Territorio(false, img, zonas[8], name));
-                    zonas[8].InsertTerr(list[0]);
-                    break;
-                case "_PINHEIRINHO":
-                    list.Add(new Territorio(false, img, zonas[3], name));
-                    zonas[3].InsertTerr(list[0]);
-                    break;
-                case "_PORTAO":
-                    list.Add(new Territorio(false, img, zonas[1], name));
-                    zonas[1].InsertTerr(list[0]);
-                    break;
-                case "_REBOUCAS":
-                    list.Add(new Territorio(false, img, zonas[7], name));
-                    zonas[7].InsertTerr(list[0]);
-                    break;
-                case "_SANTA_CANDIDA":
-                    list.Add(new Territorio(false, img, zonas[8], name));
-                    zonas[8].InsertTerr(list[0]);
-                    break;
-                case "_SANTA_FELICIDADE":
-                    list.Add(new Territorio(false, img, zonas[4], name));
-                    zonas[4].InsertTerr(list[0]);
-                    break;
-                case "_SÃO_MIGUEL":
-                    list.Add(new Territorio(false, img, zonas[0], name));
-                    zonas[0].InsertTerr(list[0]);
-                    break;
-                case "_SITIO_CERCADO":
-                    list.Add(new Territorio(false, img, zonas[2], name));
-                    zonas[2].InsertTerr(list[0]);
-                    break;
-                case "_TARUMA":
-                    list.Add(new Territorio(false, img, zonas[8], name));
-                    zonas[8].InsertTerr(list[0]);
-                    break;
-                case "_TATUQUARA":
-                    list.Add(new Territorio(false, img, zonas[3], name));
-                    zonas[3].InsertTerr(list[0]);
-                    break;
-                case "_UBERABA":
-                    list.Add(new Territorio(false, img, zonas[6], name));
-                    zonas[6].InsertTerr(list[0]);
-                    break;
-                case "_UMBARA":
-                    list.Add(new Territorio(false, img, zonas[2], name));
-                    zonas[2].InsertTerr(list[0]);
-                    break;
-                case "_VISTA_ALEGRE":
-                    list.Add(new Territorio(false, img, zonas[4], name));
-                    zonas[4].InsertTerr(list[0]);
-                    break;
-                case "_XAXIM":
-                    list.Add(new Territorio(false, img, zonas[5], name));
-                    zonas[5].InsertTerr(list[0]);
-                    break;
-                default:
-                    break;
-            }
+            list.Add(new Territorio(false, img, zonas[1], "agua verde"));
+            zonas[1].InsertTerr(list[0]);
+
+            //    case "_ALTO_BOQUEIRAO":
+            //        list.Add(new Territorio(false, img, zonas[5], name));
+            //        zonas[5].InsertTerr(list[0]);
+            //        break;
+            //    case "_ALTO_DA_XV":
+            //        list.Add(new Territorio(false, img, zonas[7], name));
+            //        zonas[7].InsertTerr(list[0]);
+            //        break;
+            //    case "_BATEL":
+            //        list.Add(new Territorio(false, img, zonas[7], name));
+            //        zonas[7].InsertTerr(list[0]);
+            //        break;
+            //    case "_BOA_VISTA":
+            //        list.Add(new Territorio(false, img, zonas[8], name));
+            //        zonas[8].InsertTerr(list[0]);
+            //        break;
+            //    case "_BOQUEIRAO":
+            //        list.Add(new Territorio(false, img, zonas[5], name));
+            //        zonas[5].InsertTerr(list[0]);
+            //        break;
+            //    case "_BUTIATUVINHA":
+            //        list.Add(new Territorio(false, img, zonas[4], name));
+            //        zonas[4].InsertTerr(list[0]);
+            //        break;
+            //    case "_CABRAL":
+            //        list.Add(new Territorio(false, img, zonas[7], name));
+            //        zonas[7].InsertTerr(list[0]);
+            //        break;
+            //    case "_CACHOEIRA":
+            //        list.Add(new Territorio(false, img, zonas[8], name));
+            //        zonas[8].InsertTerr(list[0]);
+            //        break;
+            //    case "_CAJURU":
+            //        list.Add(new Territorio(false, img, zonas[6], name));
+            //        zonas[6].InsertTerr(list[0]);
+            //        break;
+            //    case "_CAMPO_COMPRIDO":
+            //        list.Add(new Territorio(false, img, zonas[4], name));
+            //        zonas[4].InsertTerr(list[0]);
+            //        break;
+            //    case "_CAMPO_DE_SANTANA":
+            //        list.Add(new Territorio(false, img, zonas[3], name));
+            //        zonas[3].InsertTerr(list[0]);
+            //        break;
+            //    case "_CENTRO":
+            //        list.Add(new Territorio(false, img, zonas[7], name));
+            //        zonas[7].InsertTerr(list[0]);
+            //        break;
+            //    case "_CENTRO_CIVICO":
+            //        list.Add(new Territorio(false, img, zonas[7], name));
+            //        zonas[7].InsertTerr(list[0]);
+            //        break;
+            //    case "_CIC":
+            //        list.Add(new Territorio(false, img, zonas[0], name));
+            //        zonas[0].InsertTerr(list[0]);
+            //        break;
+            //    case "_FAZENDINHA":
+            //        list.Add(new Territorio(false, img, zonas[1], name));
+            //        zonas[1].InsertTerr(list[0]);
+            //        break;
+            //    case "_GANCHINHO":
+            //        list.Add(new Territorio(false, img, zonas[2], name));
+            //        zonas[2].InsertTerr(list[0]);
+            //        break;
+            //    case "_JARDIM_BOTANICO":
+            //        list.Add(new Territorio(false, img, zonas[7], name));
+            //        zonas[7].InsertTerr(list[0]);
+            //        break;
+            //    case "_JARDIM_DAS_AMERICAS":
+            //        list.Add(new Territorio(false, img, zonas[5], name));
+            //        zonas[5].InsertTerr(list[0]);
+            //        break;
+            //    case "_MERCES":
+            //        list.Add(new Territorio(false, img, zonas[7], name));
+            //        zonas[7].InsertTerr(list[0]);
+            //        break;
+            //    case "_NOVO_MUNDO":
+            //        list.Add(new Territorio(false, img, zonas[1], name));
+            //        zonas[1].InsertTerr(list[0]);
+            //        break;
+            //    case "_ORLEANS":
+            //        list.Add(new Territorio(false, img, zonas[4], name));
+            //        zonas[4].InsertTerr(list[0]);
+            //        break;
+            //    case "_PAROLIN":
+            //        list.Add(new Territorio(false, img, zonas[1], name));
+            //        zonas[1].InsertTerr(list[0]);
+            //        break;
+            //    case "_PASSAUNA":
+            //        list.Add(new Territorio(false, img, zonas[0], name));
+            //        zonas[0].InsertTerr(list[0]);
+            //        break;
+            //    case "_PILARZINHO":
+            //        list.Add(new Territorio(false, img, zonas[8], name));
+            //        zonas[8].InsertTerr(list[0]);
+            //        break;
+            //    case "_PINHEIRINHO":
+            //        list.Add(new Territorio(false, img, zonas[3], name));
+            //        zonas[3].InsertTerr(list[0]);
+            //        break;
+            //    case "_PORTAO":
+            //        list.Add(new Territorio(false, img, zonas[1], name));
+            //        zonas[1].InsertTerr(list[0]);
+            //        break;
+            //    case "_REBOUCAS":
+            //        list.Add(new Territorio(false, img, zonas[7], name));
+            //        zonas[7].InsertTerr(list[0]);
+            //        break;
+            //    case "_SANTA_CANDIDA":
+            //        list.Add(new Territorio(false, img, zonas[8], name));
+            //        zonas[8].InsertTerr(list[0]);
+            //        break;
+            //    case "_SANTA_FELICIDADE":
+            //        list.Add(new Territorio(false, img, zonas[4], name));
+            //        zonas[4].InsertTerr(list[0]);
+            //        break;
+            //    case "_SÃO_MIGUEL":
+            //        list.Add(new Territorio(false, img, zonas[0], name));
+            //        zonas[0].InsertTerr(list[0]);
+            //        break;
+            //    case "_SITIO_CERCADO":
+            //        list.Add(new Territorio(false, img, zonas[2], name));
+            //        zonas[2].InsertTerr(list[0]);
+            //        break;
+            //    case "_TARUMA":
+            //        list.Add(new Territorio(false, img, zonas[8], name));
+            //        zonas[8].InsertTerr(list[0]);
+            //        break;
+            //    case "_TATUQUARA":
+            //        list.Add(new Territorio(false, img, zonas[3], name));
+            //        zonas[3].InsertTerr(list[0]);
+            //        break;
+            //    case "_UBERABA":
+            //        list.Add(new Territorio(false, img, zonas[6], name));
+            //        zonas[6].InsertTerr(list[0]);
+            //        break;
+            //    case "_UMBARA":
+            //        list.Add(new Territorio(false, img, zonas[2], name));
+            //        zonas[2].InsertTerr(list[0]);
+            //        break;
+            //    case "_VISTA_ALEGRE":
+            //        list.Add(new Territorio(false, img, zonas[4], name));
+            //        zonas[4].InsertTerr(list[0]);
+            //        break;
+            //    case "_XAXIM":
+            //        list.Add(new Territorio(false, img, zonas[5], name));
+            //        zonas[5].InsertTerr(list[0]);
+            //        break;
+            //    default:
+            //        break;
+            //}
 
             return list[0];
         }

@@ -11,6 +11,7 @@ namespace warCWBv2
 {
     public class MapManager
     {
+        private int channels = 4;
         public Bitmap Map { get; private set; } = Properties.Resources.mapfull;
         private byte[] bytes = null;
         private int stride = 0;
@@ -57,18 +58,18 @@ namespace warCWBv2
                 bytes[crr + 2] = target.R;
                 bytes[crr + 1] = target.G;
                 bytes[crr + 0] = target.B;
-                stack.Push(crr + 4);
-                stack.Push(crr - 4);
+                stack.Push(crr + channels);
+                stack.Push(crr - channels);
                 stack.Push(crr + stride);
                 stack.Push(crr - stride);
             }
         }
 
         private int toindex(Point p)
-            => 4 * p.X + p.Y * stride;
+            => channels * p.X + p.Y * stride;
 
         private Point topoint(int index)
-            => new Point((index % stride) / 4, (index / stride) / 4);
+            => new Point((index % stride) / channels, (index / stride) / channels);
 
         private bool compare(int index, Color c)
             => bytes[index + 3] == c.A && bytes[index + 2] == c.R && bytes[index + 1] == c.G && bytes[index] == c.B;
