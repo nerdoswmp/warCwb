@@ -15,7 +15,7 @@ namespace warCWBv2
         private int troops;
         private bool bonus;
 
-        private Point coord;
+        private Point[] coord;
         private object a;
         private string name;
         public Territorio(bool bonus, object coord, Zona zona, string name)
@@ -58,9 +58,14 @@ namespace warCWBv2
         {
             return zona;
         }
-        public Point GetCoord()
+        public Point[] GetCoord()
         {
             return coord;
+        }
+
+        public void SetCoords(Point[] p)
+        {
+            coord = p;
         }
         public List<Territorio> GetAdjacente()
         {
