@@ -16,7 +16,6 @@ namespace warCWBv2
         private bool bonus;
 
         private Point[] coord;
-        private object a;
         private string name;
         public Territorio(bool bonus, Point[] coord, Zona zona, string name)
         {

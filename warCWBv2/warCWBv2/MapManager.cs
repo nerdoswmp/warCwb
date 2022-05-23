@@ -16,6 +16,7 @@ namespace warCWBv2
         private byte[] bytes = null;
         private int stride = 0;
         private BitmapData data = null;
+        private Random rand = new Random();
 
         public void Initialize()
         {
@@ -73,5 +74,19 @@ namespace warCWBv2
 
         private bool compare(int index, Color c)
             => bytes[index + 3] == c.A && bytes[index + 2] == c.R && bytes[index + 1] == c.G && bytes[index] == c.B;
+
+        public void ClearRandom(List<Territorio> territorios)
+        {
+            Color[] colors = { Color.Red, Color.Green, Color.Blue, Color.Yellow };
+            int i = rand.Next(0,4);
+            foreach(var ter in territorios)
+            {
+                if (i >= 4)
+                {
+                    i = 0;
+                }
+                Clear(colors[i++], ter.GetCoord()[0]);
+            }
+        }
     }
 }
