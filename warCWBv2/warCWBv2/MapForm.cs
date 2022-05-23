@@ -87,145 +87,73 @@ namespace warCWBv2
             list.Add(new Territorio(false, new Point[] { new Point(320, 182) }, zonas[7], "alto da xv"));
             zonas[7].InsertTerr(list[2]);
             list.Add(new Territorio(false, new Point[] { new Point(217, 220) }, zonas[7], "batel"));
-            zonas[7].InsertTerr(list[3]);
-            list.Add(new Territorio(false,new Point[] { new Point(302, 86) }, zonas[8], "boa vista"));
-            zonas[8].InsertTerr(list[2]);
-            //    case "_BOQUEIRAO":
-            //        list.Add(new Territorio(false, img, zonas[5], name));
-            //        zonas[5].InsertTerr(list[0]);
-            //        break;
-            //    case "_BUTIATUVINHA":
-            //        list.Add(new Territorio(false, img, zonas[4], name));
-            //        zonas[4].InsertTerr(list[0]);
-            //        break;
-            //    case "_CABRAL":
-            //        list.Add(new Territorio(false, img, zonas[7], name));
-            //        zonas[7].InsertTerr(list[0]);
-            //        break;
-            //    case "_CACHOEIRA":
-            //        list.Add(new Territorio(false, img, zonas[8], name));
-            //        zonas[8].InsertTerr(list[0]);
-            //        break;
-            //    case "_CAJURU":
-            //        list.Add(new Territorio(false, img, zonas[6], name));
-            //        zonas[6].InsertTerr(list[0]);
-            //        break;
-            //    case "_CAMPO_COMPRIDO":
-            //        list.Add(new Territorio(false, img, zonas[4], name));
-            //        zonas[4].InsertTerr(list[0]);
-            //        break;
-            //    case "_CAMPO_DE_SANTANA":
-            //        list.Add(new Territorio(false, img, zonas[3], name));
-            //        zonas[3].InsertTerr(list[0]);
-            //        break;
-            //    case "_CENTRO":
-            //        list.Add(new Territorio(false, img, zonas[7], name));
-            //        zonas[7].InsertTerr(list[0]);
-            //        break;
-            //    case "_CENTRO_CIVICO":
-            //        list.Add(new Territorio(false, img, zonas[7], name));
-            //        zonas[7].InsertTerr(list[0]);
-            //        break;
-            //    case "_CIC":
-            //        list.Add(new Territorio(false, img, zonas[0], name));
-            //        zonas[0].InsertTerr(list[0]);
-            //        break;
-            //    case "_FAZENDINHA":
-            //        list.Add(new Territorio(false, img, zonas[1], name));
-            //        zonas[1].InsertTerr(list[0]);
-            //        break;
-            //    case "_GANCHINHO":
-            //        list.Add(new Territorio(false, img, zonas[2], name));
-            //        zonas[2].InsertTerr(list[0]);
-            //        break;
-            //    case "_JARDIM_BOTANICO":
-            //        list.Add(new Territorio(false, img, zonas[7], name));
-            //        zonas[7].InsertTerr(list[0]);
-            //        break;
-            //    case "_JARDIM_DAS_AMERICAS":
-            //        list.Add(new Territorio(false, img, zonas[5], name));
-            //        zonas[5].InsertTerr(list[0]);
-            //        break;
-            //    case "_MERCES":
-            //        list.Add(new Territorio(false, img, zonas[7], name));
-            //        zonas[7].InsertTerr(list[0]);
-            //        break;
-            //    case "_NOVO_MUNDO":
-            //        list.Add(new Territorio(false, img, zonas[1], name));
-            //        zonas[1].InsertTerr(list[0]);
-            //        break;
-            //    case "_ORLEANS":
-            //        list.Add(new Territorio(false, img, zonas[4], name));
-            //        zonas[4].InsertTerr(list[0]);
-            //        break;
-            //    case "_PAROLIN":
-            //        list.Add(new Territorio(false, img, zonas[1], name));
-            //        zonas[1].InsertTerr(list[0]);
-            //        break;
-            //    case "_PASSAUNA":
-            //        list.Add(new Territorio(false, img, zonas[0], name));
-            //        zonas[0].InsertTerr(list[0]);
-            //        break;
-            //    case "_PILARZINHO":
-            //        list.Add(new Territorio(false, img, zonas[8], name));
-            //        zonas[8].InsertTerr(list[0]);
-            //        break;
-            //    case "_PINHEIRINHO":
-            //        list.Add(new Territorio(false, img, zonas[3], name));
-            //        zonas[3].InsertTerr(list[0]);
-            //        break;
-            //    case "_PORTAO":
-            //        list.Add(new Territorio(false, img, zonas[1], name));
-            //        zonas[1].InsertTerr(list[0]);
-            //        break;
-            //    case "_REBOUCAS":
-            //        list.Add(new Territorio(false, img, zonas[7], name));
-            //        zonas[7].InsertTerr(list[0]);
-            //        break;
-            //    case "_SANTA_CANDIDA":
-            //        list.Add(new Territorio(false, img, zonas[8], name));
-            //        zonas[8].InsertTerr(list[0]);
-            //        break;
-            //    case "_SANTA_FELICIDADE":
-            //        list.Add(new Territorio(false, img, zonas[4], name));
-            //        zonas[4].InsertTerr(list[0]);
-            //        break;
-            //    case "_SÃO_MIGUEL":
-            //        list.Add(new Territorio(false, img, zonas[0], name));
-            //        zonas[0].InsertTerr(list[0]);
-            //        break;
-            //    case "_SITIO_CERCADO":
-            //        list.Add(new Territorio(false, img, zonas[2], name));
-            //        zonas[2].InsertTerr(list[0]);
-            //        break;
-            //    case "_TARUMA":
-            //        list.Add(new Territorio(false, img, zonas[8], name));
-            //        zonas[8].InsertTerr(list[0]);
-            //        break;
-            //    case "_TATUQUARA":
-            //        list.Add(new Territorio(false, img, zonas[3], name));
-            //        zonas[3].InsertTerr(list[0]);
-            //        break;
-            //    case "_UBERABA":
-            //        list.Add(new Territorio(false, img, zonas[6], name));
-            //        zonas[6].InsertTerr(list[0]);
-            //        break;
-            //    case "_UMBARA":
-            //        list.Add(new Territorio(false, img, zonas[2], name));
-            //        zonas[2].InsertTerr(list[0]);
-            //        break;
-            //    case "_VISTA_ALEGRE":
-            //        list.Add(new Territorio(false, img, zonas[4], name));
-            //        zonas[4].InsertTerr(list[0]);
-            //        break;
-            //    case "_XAXIM":
-            //        list.Add(new Territorio(false, img, zonas[5], name));
-            //        zonas[5].InsertTerr(list[0]);
-            //        break;
-            //    default:
-            //        break;
-            //}
-
+            zonas[7].InsertTerr(list[0]);
+            list.Add(new Territorio(false,new Point[] { new Point(217, 220) }, zonas[8], "boa vista"));
+            zonas[8].InsertTerr(list[0]);
+            list.Add(new Territorio(false,new Point[] { new Point(217, 220) }, zonas[8], "buitavinha"));
+            zonas[4].InsertTerr(list[0]);
+            list.Add(new Territorio(false,new Point[] { new Point(217, 220) }, zonas[8], "cabral"));
+            zonas[7].InsertTerr(list[0]);
+            list.Add(new Territorio(false,new Point[] { new Point(217, 220) }, zonas[8], "cachoeira"));
+            zonas[8].InsertTerr(list[0]);
+            list.Add(new Territorio(false,new Point[] { new Point(217, 220) }, zonas[8], "cajuru"));
+            zonas[6].InsertTerr(list[0]);
+            list.Add(new Territorio(false, new Point[] { new Point(217, 220) }, zonas[8], "campo comprido"));
+            zonas[4].InsertTerr(list[0]);
+            list.Add(new Territorio(false,  new Point[] { new Point(217, 220) }, zonas[8], "campo de santana"));
+            zonas[3].InsertTerr(list[0]);
+            list.Add(new Territorio(false, new Point[] { new Point(217, 220) }, zonas[8], "centro"));
+                    zonas[7].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "centro cívico"));
+                    zonas[7].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "cic"));
+                    zonas[0].insertterr(list[0]);
+            list.add(new territorio(false,  new point[] { new point(217, 220) }, zonas[8], "fazendinha"));
+                    zonas[1].insertterr(list[0]);
+            list.add(new territorio(false,  new point[] { new point(217, 220) }, zonas[8], "ganchinho"));
+                    zonas[2].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "jardim botânico"));
+                    zonas[7].insertterr(list[0]);
+            list.add(new territorio(false,new point[] { new point(217, 220) }, zonas[8], "jardim das américas"));
+                    zonas[5].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "mercês"));
+                    zonas[7].insertterr(list[0]);
+            list.add(new territorio(false,  new point[] { new point(217, 220) }, zonas[8], "novo mundo"));
+                    zonas[1].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "orleans"));
+                    zonas[4].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "parolin"));
+                    zonas[1].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "passaúna"));
+                    zonas[0].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "pilarzinho"));
+                    zonas[8].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "pinheirinho"));
+                    zonas[3].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "portão"));
+                    zonas[1].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "rebouças"));
+                    zonas[7].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "santa cândida"));
+                    zonas[8].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "santa felicidade"));
+                    zonas[4].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "são miguel"));
+                    zonas[0].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "sitio cercado"));
+                    zonas[2].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "tarumã"));
+                    zonas[8].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "tatuquara"));
+                    zonas[3].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "uberaba"));
+                    zonas[6].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "umbará"));
+                    zonas[2].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "vista alegre"));
+                    zonas[4].insertterr(list[0]);
+            list.add(new territorio(false, new point[] { new point(217, 220) }, zonas[8], "xaxim"));
+                    zonas[5].insertterr(list[0]);
             return list;
         }
         public Territorio FindTerritorio(List<Territorio> territorios, string name)
@@ -235,8 +163,9 @@ namespace warCWBv2
         public void InsertAdjacent(List<Territorio> territorios)
         {
             var t = territorios;
-            FindTerritorio(t, "aguaverde").InsertTerr(new Territorio[]{ FindTerritorio(territorios, "batel"), FindTerritorio(territorios, "portao"),
-                FindTerritorio(territorios, "parolin"), FindTerritorio(territorios, "fazendinha"), FindTerritorio(territorios, "campocomprido"),
+            FindTerritorio(t, "agua verde").InsertTerr(new Territorio[]{ FindTerritorio(territorios, "batel"),  FindTerritorio(territorios, "boa vista"),
+                 FindTerritorio(territorios, "buitavinha"), FindTerritorio(territorios, "cabral"),FindTerritorio(territorios, "portao"),
+                FindTerritorio(territorios, "parolin"), FindTerritorio(territorios, "fazendinha"), FindTerritorio(territorios, "campo comprido"),
                 FindTerritorio(territorios, "centro"), FindTerritorio(territorios, "reboucas")});
             // fazer para cada um dos territorios!!!!!!!!!!!
         }
