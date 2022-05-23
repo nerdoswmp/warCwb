@@ -84,10 +84,9 @@ namespace warCWBv2
             zonas[7].InsertTerr(list[0]);
             list.Add(new Territorio(false, new Point[] { new Point(217, 220) }, zonas[7], "batel"));
             zonas[7].InsertTerr(list[0]);
-            //    case "_BATEL":
-            //        list.Add(new Territorio(false, img, zonas[7], name));
-            //        zonas[7].InsertTerr(list[0]);
-            //        break;
+            list.Add(new Territorio(false,new Point[] { new Point(217, 220) }, zonas[8], "boa vista"));
+            zonas[8].InsertTerr(list[0]);
+
             //    case "_BOA_VISTA":
             //        list.Add(new Territorio(false, img, zonas[8], name));
             //        zonas[8].InsertTerr(list[0]);
