@@ -18,11 +18,11 @@ namespace warCWBv2
         private Point[] coord;
         private object a;
         private string name;
-        public Territorio(bool bonus, object coord, Zona zona, string name)
+        public Territorio(bool bonus, Point[] coord, Zona zona, string name)
         {
             this.zona = zona;
             this.bonus = bonus;
-            this.a = coord;
+            this.coord = coord;
             this.name = name.ToLower().Replace("_", "");
          }
 

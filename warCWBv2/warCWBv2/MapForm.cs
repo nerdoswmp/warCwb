@@ -31,7 +31,7 @@ namespace warCWBv2
             pb.Refresh();
 
             MapManager mm = new MapManager();
-
+            territorioList = CreateTerritorio();
             Timer tm = new Timer();
             tm.Interval = 50;
 
@@ -70,23 +70,20 @@ namespace warCWBv2
         }
 
         // reescrever essa parte inteira
-        public Territorio CreateTerritorio(object img, string name)
+        public List<Territorio> CreateTerritorio()
         {
             List<Territorio> list = new List<Territorio>();
             
             // trigger warning: murilo moment
             // YANDERE DEV MOMENT assassinado Moll
-            list.Add(new Territorio(false, img, zonas[1], "agua verde"));
+            list.Add(new Territorio(false, new Point[]{new Point(233, 263)}, zonas[1], "agua verde"));
             zonas[1].InsertTerr(list[0]);
-
-            //    case "_ALTO_BOQUEIRAO":
-            //        list.Add(new Territorio(false, img, zonas[5], name));
-            //        zonas[5].InsertTerr(list[0]);
-            //        break;
-            //    case "_ALTO_DA_XV":
-            //        list.Add(new Territorio(false, img, zonas[7], name));
-            //        zonas[7].InsertTerr(list[0]);
-            //        break;
+            list.Add(new Territorio(false, new Point[] { new Point(336, 375) }, zonas[5], "alto boqueirão"));
+            zonas[5].InsertTerr(list[0]);
+            list.Add(new Territorio(false, new Point[] { new Point(320, 182) }, zonas[7], "alto da xv"));
+            zonas[7].InsertTerr(list[0]);
+            list.Add(new Territorio(false, new Point[] { new Point(217, 220) }, zonas[7], "batel"));
+            zonas[7].InsertTerr(list[0]);
             //    case "_BATEL":
             //        list.Add(new Territorio(false, img, zonas[7], name));
             //        zonas[7].InsertTerr(list[0]);
@@ -231,7 +228,7 @@ namespace warCWBv2
             //        break;
             //}
 
-            return list[0];
+            return list;
         }
         public Territorio FindTerritorio(List<Territorio> territorios, string name)
         {
