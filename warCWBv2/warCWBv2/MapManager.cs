@@ -79,7 +79,8 @@ namespace warCWBv2
         {
             Color[] colors = { Color.Red, Color.Green, Color.Blue, Color.Yellow };
             int i = rand.Next(0,4);
-            foreach(var ter in territorios)
+            territorios = territorios.OrderBy(a => rand.Next()).ToList();
+            foreach (var ter in territorios)
             {
                 if (i >= 4)
                 {
