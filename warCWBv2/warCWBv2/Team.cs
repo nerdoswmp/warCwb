@@ -9,11 +9,15 @@ namespace warCWBv2
 {
     public class Team
     {
-        public Color Color { get; set; }
+        public Color Color;
         private int objective { get; set; }
         private List<Zona> zonas = new List<Zona>();
         private List<Territorio> territorios = new List<Territorio>();
 
+        public Team(Color color)
+        {
+            this.Color = color;
+        }
         public bool InsertZona(Zona zona)
         {
             bool haszone = zona.GetTerritorios().All(t => territorios.Contains(t));
@@ -32,5 +36,9 @@ namespace warCWBv2
             return false;
         }
 
+        public Color GetColor()
+        {
+            return Color;
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using static warCWBv2.MapForm;
 
 namespace warCWBv2
 {
@@ -77,7 +78,7 @@ namespace warCWBv2
 
         public void ClearRandom(List<Territorio> territorios)
         {
-            Color[] colors = { Color.Red, Color.Green, Color.Blue, Color.Yellow };
+            Team[] teams = GetAllTeams();
             int i = rand.Next(0,4);
             territorios = territorios.OrderBy(a => rand.Next()).ToList();
             foreach (var ter in territorios)
@@ -86,7 +87,9 @@ namespace warCWBv2
                 {
                     i = 0;
                 }
-                Clear(colors[i++], ter.GetCoord()[0]);
+                teams[i].InsertTerr(ter);
+                Clear(teams[i++].GetColor(), ter.GetCoord()[0]);
+                
             }
         }
     }
