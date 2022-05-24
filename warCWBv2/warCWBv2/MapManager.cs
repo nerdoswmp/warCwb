@@ -88,7 +88,7 @@ namespace warCWBv2
                     i = 0;
                 }
                 teams[i].InsertTerr(ter);
-                Clear(teams[i++].GetColor(), ter.GetCoord()[0]);
+                Clear(teams[i++].GetColor(), ter.GetCoord());
                 
             }
         }

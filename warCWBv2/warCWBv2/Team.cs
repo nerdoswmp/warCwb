@@ -36,6 +36,11 @@ namespace warCWBv2
             return false;
         }
 
+        public List<Territorio> GetTerritorios()
+        {
+            return territorios;
+        }
+
         public Color GetColor()
         {
             return Color;

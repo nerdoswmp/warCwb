@@ -15,9 +15,9 @@ namespace warCWBv2
         private int troops;
         private bool bonus;
 
-        private Point[] coord;
+        private Point coord;
         private string name;
-        public Territorio(bool bonus, Point[] coord, Zona zona, string name)
+        public Territorio(bool bonus, Point coord, Zona zona, string name)
         {
             this.zona = zona;
             this.bonus = bonus;
@@ -57,12 +57,12 @@ namespace warCWBv2
         {
             return zona;
         }
-        public Point[] GetCoord()
+        public Point GetCoord()
         {
             return coord;
         }
 
-        public void SetCoords(Point[] p)
+        public void SetCoords(Point p)
         {
             coord = p;
         }
