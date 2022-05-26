@@ -54,7 +54,7 @@ namespace warCWBv2
                 mm.Close();
             };
 
-            foreach(var t in FindTerritorio("água verde").GetAdjacente()) 
+            foreach(var t in FindTerritorio("campo comprido").GetAdjacente()) 
             {
                 var q = GetAllTeams().Where(x => x.GetTerritorios().Contains(t)).Single();
                 Console.WriteLine($"{t.GetName()} - {q.GetColor()}");
@@ -101,7 +101,7 @@ namespace warCWBv2
             // YANDERE DEV MOMENT assassinado Moll
             list.Add(new Territorio(false, new Point(233, 263), zonas[1], "água verde"));
             zonas[1].InsertTerr(list[0]);
-            list.Add(new Territorio(false, new Point(336, 375), zonas[5], "alto boqueirão"));
+            list.Add(new Territorio(false, new Point(336, 457), zonas[5], "alto boqueirão"));
             zonas[5].InsertTerr(list[1]);
             list.Add(new Territorio(false, new Point(320, 182), zonas[7], "alto da xv"));
             zonas[7].InsertTerr(list[2]);
@@ -109,9 +109,9 @@ namespace warCWBv2
             zonas[7].InsertTerr(list[3]);
             list.Add(new Territorio(false, new Point(293, 105), zonas[8], "boa vista"));
             zonas[8].InsertTerr(list[4]);
-            list.Add(new Territorio(false, new Point(342, 453), zonas[5], "boqueirão"));
+            list.Add(new Territorio(false, new Point(336, 375), zonas[5], "boqueirão"));
             zonas[5].InsertTerr(list[5]);
-            list.Add(new Territorio(false, new Point(87, 116), zonas[4], "buitavinha"));
+            list.Add(new Territorio(false, new Point(87, 116), zonas[4], "butiatuvinha"));
             zonas[4].InsertTerr(list[6]);
             list.Add(new Territorio(false, new Point(308, 149), zonas[7], "cabral"));
             zonas[7].InsertTerr(list[7]);
@@ -188,6 +188,26 @@ namespace warCWBv2
             FindTerritorio("água verde").InsertTerr(new Territorio[]{ FindTerritorio("batel"), FindTerritorio("portão"),
                  FindTerritorio("parolin"), FindTerritorio("fazendinha"), FindTerritorio("campo comprido"),
                  FindTerritorio("centro"), FindTerritorio("rebouças")});
+            FindTerritorio("alto boqueirão").InsertTerr(new Territorio[]{ FindTerritorio("boqueirão"), FindTerritorio("xaxim"),
+                 FindTerritorio("sitio cercado"), FindTerritorio("ganchinho")});
+            FindTerritorio("alto da xv").InsertTerr(new Territorio[]{ FindTerritorio("jardim botânico"), FindTerritorio("centro"),
+                 FindTerritorio("tarumã"), FindTerritorio("cabral")});
+            FindTerritorio("batel").InsertTerr(new Territorio[]{ FindTerritorio("água verde"), FindTerritorio("centro"),
+                 FindTerritorio("campo comprido"), FindTerritorio("santa felicidade"), FindTerritorio("mercês")});
+            FindTerritorio("boa vista").InsertTerr(new Territorio[]{ FindTerritorio("cabral"), FindTerritorio("santa cândida"),
+                 FindTerritorio("cachoeira"), FindTerritorio("centro cívico"), FindTerritorio("pilarzinho"), FindTerritorio("tarumã")});
+            FindTerritorio("boqueirão").InsertTerr(new Territorio[]{ FindTerritorio("alto boqueirão"), FindTerritorio("xaxim"),
+                 FindTerritorio("uberaba")});
+            FindTerritorio("butiatuvinha").InsertTerr(new Territorio[]{ FindTerritorio("santa felicidade"), FindTerritorio("orleans")});
+            FindTerritorio("cabral").InsertTerr(new Territorio[]{ FindTerritorio("boa vista"), FindTerritorio("centro cívico"),
+                 FindTerritorio("tarumã"), FindTerritorio("alto da xv"), FindTerritorio("centro")});
+            FindTerritorio("cachoeira").InsertTerr(new Territorio[]{ FindTerritorio("pilarzinho"), FindTerritorio("boa vista"),
+                 FindTerritorio("santa cândida")});
+            FindTerritorio("cajuru").InsertTerr(new Territorio[]{ FindTerritorio("uberaba"), FindTerritorio("jardim das américas"),
+                 FindTerritorio("jardim botânico"), FindTerritorio("tarumã")});
+            FindTerritorio("campo comprido").InsertTerr(new Territorio[]{ FindTerritorio("batel"), FindTerritorio("água verde"),
+                 FindTerritorio("santa felicidade"), FindTerritorio("orleans"), FindTerritorio("cic"),
+                 FindTerritorio("fazendinha")});
             // fazer para cada um dos territorios!!!!!!!!!!!
         }
 
