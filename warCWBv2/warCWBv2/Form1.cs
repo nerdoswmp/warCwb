@@ -67,8 +67,8 @@ namespace warCWBv2
 
         private void btnOff_Click(object sender, EventArgs e)
         {
-            MapForm mapa = new MapForm();
-            mapa.Show();
+            PreOff preOff = new PreOff();
+            preOff.Show();
             this.Hide();
         }
 
