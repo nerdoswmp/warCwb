@@ -54,7 +54,7 @@ namespace warCWBv2
                 mm.Close();
             };
 
-            foreach(var t in FindTerritorio("campo comprido").GetAdjacente()) 
+            foreach(var t in FindTerritorio("fazendinha").GetAdjacente()) 
             {
                 var q = GetAllTeams().Where(x => x.GetTerritorios().Contains(t)).Single();
                 Console.WriteLine($"{t.GetName()} - {q.GetColor()}");
@@ -208,6 +208,17 @@ namespace warCWBv2
             FindTerritorio("campo comprido").InsertTerr(new Territorio[]{ FindTerritorio("batel"), FindTerritorio("água verde"),
                  FindTerritorio("santa felicidade"), FindTerritorio("orleans"), FindTerritorio("cic"),
                  FindTerritorio("fazendinha")});
+            FindTerritorio("campo de santana").InsertTerr(new Territorio[]{ FindTerritorio("tatuquara"), FindTerritorio("umbará")});
+            FindTerritorio("centro").InsertTerr(new Territorio[]{ FindTerritorio("rebouças"), FindTerritorio("jardim botânico"),
+                 FindTerritorio("batel"), FindTerritorio("água verde"), FindTerritorio("mercês"), FindTerritorio("centro cívico"),
+                 FindTerritorio("alto da xv"), FindTerritorio("cabral")});
+            FindTerritorio("centro cívico").InsertTerr(new Territorio[]{ FindTerritorio("cabral"), FindTerritorio("centro"),
+                 FindTerritorio("vista alegre"), FindTerritorio("pilarzinho"), FindTerritorio("boa vista"), FindTerritorio("mercês")});
+            FindTerritorio("cic").InsertTerr(new Territorio[]{ FindTerritorio("tatuquara"), FindTerritorio("pinheirinho"),
+                 FindTerritorio("são miguel"), FindTerritorio("passaúna"), FindTerritorio("fazendinha"), FindTerritorio("novo mundo"),
+                 FindTerritorio("campo comprido"), FindTerritorio("orleans")});
+            FindTerritorio("fazendinha").InsertTerr(new Territorio[]{ FindTerritorio("cic"), FindTerritorio("portão"),
+                 FindTerritorio("campo comprido"), FindTerritorio("novo mundo"), FindTerritorio("água verde")});
             // fazer para cada um dos territorios!!!!!!!!!!!
         }
 
