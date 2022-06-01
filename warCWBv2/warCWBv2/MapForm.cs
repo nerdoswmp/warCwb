@@ -230,6 +230,48 @@ namespace warCWBv2
                  FindTerritorio("campo comprido"), FindTerritorio("orleans")});
             FindTerritorio("fazendinha").InsertTerr(new Territorio[]{ FindTerritorio("cic"), FindTerritorio("portão"),
                  FindTerritorio("campo comprido"), FindTerritorio("novo mundo"), FindTerritorio("água verde")});
+            FindTerritorio("ganchinho").InsertTerr(new Territorio[]{ FindTerritorio("umbará"), FindTerritorio("sitio cercado"),
+                 FindTerritorio("alto boqueirão")});
+            FindTerritorio("jardim botânico").InsertTerr(new Territorio[]{ FindTerritorio("centro"), FindTerritorio("tarumã"),
+                 FindTerritorio("jardim das américas"), FindTerritorio("rebouças"), FindTerritorio("alto da xv"),  FindTerritorio("cajuru")});
+            FindTerritorio("jardim das américas").InsertTerr(new Territorio[]{ FindTerritorio("jardim botânico"), FindTerritorio("uberaba"),
+                FindTerritorio("xaxim"), FindTerritorio("rebouças"),  FindTerritorio("cajuru")});
+            FindTerritorio("mercês").InsertTerr(new Territorio[]{ FindTerritorio("vista alegre"), FindTerritorio("centro cívico"),
+                 FindTerritorio("centro"), FindTerritorio("batel"), FindTerritorio("santa felicidade")});
+            FindTerritorio("novo mundo").InsertTerr(new Territorio[]{ FindTerritorio("cic"), FindTerritorio("fazendinha"),
+                 FindTerritorio("portão"), FindTerritorio("parolin"), FindTerritorio("xaxim"),  FindTerritorio("pinheirinho")});
+            FindTerritorio("orleans").InsertTerr(new Territorio[]{ FindTerritorio("butiatuvinha"), FindTerritorio("santa felicidade"),
+                 FindTerritorio("campo comprido"), FindTerritorio("cic"), FindTerritorio("passaúna")});
+            FindTerritorio("parolin").InsertTerr(new Territorio[]{ FindTerritorio("água verde"), FindTerritorio("portão"),
+                 FindTerritorio("novo mundo"), FindTerritorio("xaxim"), FindTerritorio("rebouças")});
+            FindTerritorio("passaúna").InsertTerr(new Territorio[]{ FindTerritorio("são miguel"), FindTerritorio("cic"),
+                 FindTerritorio("orleans")});
+            FindTerritorio("pilarzinho").InsertTerr(new Territorio[]{ FindTerritorio("vista alegre"), FindTerritorio("boa vista"),
+                 FindTerritorio("cachoeira"), FindTerritorio("centro cívico")});
+            FindTerritorio("pinheirinho").InsertTerr(new Territorio[]{ FindTerritorio("cic"), FindTerritorio("xaxim"),
+                 FindTerritorio("novo mundo"), FindTerritorio("tatuquara"), FindTerritorio("sitio cercado")});
+            FindTerritorio("portão").InsertTerr(new Territorio[]{ FindTerritorio("fazendinha"), FindTerritorio("novo mundo"),
+                 FindTerritorio("água verde"), FindTerritorio("parolin")});
+            FindTerritorio("rebouças").InsertTerr(new Territorio[]{ FindTerritorio("centro"), FindTerritorio("água verde"),
+                 FindTerritorio("parolin"), FindTerritorio("xaxim"), FindTerritorio("jardim das américas")});
+            FindTerritorio("santa cândida").InsertTerr(new Territorio[]{ FindTerritorio("boa vista"), FindTerritorio("cachoeira"),
+                 FindTerritorio("tarumã")});
+            FindTerritorio("são miguel").InsertTerr(new Territorio[]{ FindTerritorio("passaúna"), FindTerritorio("cic"), FindTerritorio("tatuquara")});
+            FindTerritorio("sitio cercado").InsertTerr(new Territorio[]{ FindTerritorio("pinheirinho"), FindTerritorio("xaxim"),
+                 FindTerritorio("alto boqueirão"), FindTerritorio("ganchinho"), FindTerritorio("umbará"), FindTerritorio("tatuquara")});
+            FindTerritorio("tarumã").InsertTerr(new Territorio[]{ FindTerritorio("alto da xv"), FindTerritorio("jardim botânico"),
+                 FindTerritorio("cajuru"), FindTerritorio("cabral"), FindTerritorio("boa vista"), FindTerritorio("santa cândida")});
+            FindTerritorio("tatuquara").InsertTerr(new Territorio[]{ FindTerritorio("cic"), FindTerritorio("pinheirinho"),
+                 FindTerritorio("sitio cercado"), FindTerritorio("umbará"), FindTerritorio("campo de santana"), FindTerritorio("são miguel")});
+            FindTerritorio("uberaba").InsertTerr(new Territorio[]{ FindTerritorio("boqueirão"), FindTerritorio("xaxim"),
+                 FindTerritorio("jardim das américas"), FindTerritorio("cajuru")});
+            FindTerritorio("umbará").InsertTerr(new Territorio[]{ FindTerritorio("ganchinho"), FindTerritorio("tatuquara"),
+                 FindTerritorio("campo de santana"), FindTerritorio("sitio cercado")});
+            FindTerritorio("vista alegre").InsertTerr(new Territorio[]{ FindTerritorio("pilarzinho"), FindTerritorio("centro cívico"),
+                 FindTerritorio("mercês"), FindTerritorio("santa felicidade")});
+            FindTerritorio("xaxim").InsertTerr(new Territorio[]{ FindTerritorio("boqueirão"), FindTerritorio("alto boqueirão"),
+                 FindTerritorio("novo mundo"), FindTerritorio("pinheirinho"), FindTerritorio("sitio cercado"), FindTerritorio("parolin"), FindTerritorio("rebouças"),
+                FindTerritorio("jardim das américas"), FindTerritorio("uberaba")});
             // fazer para cada um dos territorios!!!!!!!!!!!
         }
 
