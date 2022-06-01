@@ -50,18 +50,29 @@ namespace warCWBv2
             {
                 Console.WriteLine(mea.Location.ToString());
                 mm.Initialize();
-                mm.Clear(Color.Green, mea.Location);
+                string territorio = mm.Clear(Color.Orange, mea.Location, true);
                 mm.Close();
+                if (territorio != "")
+                {
+                    foreach (var t in FindTerritorio(territorio).GetAdjacente())
+                    {
+                        var q = GetAllTeams().Where(x => x.GetTerritorios().Contains(t)).Single();
+                        Console.WriteLine($"{t.GetName()} - {q.GetColor()}");
+                        mm.Initialize();
+                        mm.Clear(Color.Purple, t.GetCoord(), true);
+                        mm.Close();
+                    }
+                }
             };
 
-            foreach(var t in FindTerritorio("fazendinha").GetAdjacente()) 
-            {
-                var q = GetAllTeams().Where(x => x.GetTerritorios().Contains(t)).Single();
-                Console.WriteLine($"{t.GetName()} - {q.GetColor()}");
-                mm.Initialize();
-                mm.Clear(Color.Purple, t.GetCoord());
-                mm.Close();
-            }
+            //foreach(var t in FindTerritorio("fazendinha").GetAdjacente()) 
+            //{
+            //    var q = GetAllTeams().Where(x => x.GetTerritorios().Contains(t)).Single();
+            //    Console.WriteLine($"{t.GetName()} - {q.GetColor()}");
+            //    mm.Initialize();
+            //    mm.Clear(Color.Purple, t.GetCoord());
+            //    mm.Close();
+            //}
         }
 
 
@@ -225,6 +236,21 @@ namespace warCWBv2
         public static Team[] GetAllTeams()
         {
             return teams;
+        }
+
+        public static Point[] GetTerritorioCoords()
+        {
+            Point[] points = new Point[38];
+            for (int i = 0; i<38; i++)
+            {
+                points[i] = territorioList[i].GetCoord();
+            }
+            return points;
+        }
+
+        public static List<Territorio> GetTerritorios()
+        {
+            return territorioList;
         }
     }
 

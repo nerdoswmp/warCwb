@@ -34,23 +34,28 @@ namespace warCWBv2
             Map.UnlockBits(data);
         }
 
-        public void Clear(Color target, Point p)
+        public string Clear(Color target, Point p, bool input)
         {
             int index = toindex(p);
             Color origin = Color.FromArgb(bytes[index + 3], bytes[index + 2], bytes[index + 1], bytes[index]);
             if (target.A == origin.A && target.R == origin.R && target.G == origin.G && target.B == origin.B)
-                return;
+                return "";
             if (origin.A == 255 && origin.R == 255 && origin.G == 255 && origin.B == 255)
-                return;
-            clear(origin, target, index);
+                return "";
+            if (origin.A == 255 && origin.R == 0 && origin.G == 0 && origin.B == 0)
+                return "";
+
+            return clear(origin, target, index, input);
+
         }
 
-        private void clear(Color origin, Color target, int index)
+        private string clear(Color origin, Color target, int index, bool input)
         {
             Stack<int> stack = new Stack<int>();
             stack.Push(index);
             int crr = -1;
-
+            var t = GetTerritorioCoords();
+            string tername = "";
             while (stack.Count > 0)
             {
                 crr = stack.Pop();
@@ -64,14 +69,22 @@ namespace warCWBv2
                 stack.Push(crr - channels);
                 stack.Push(crr + stride);
                 stack.Push(crr - stride);
+
+                if (t.Contains(topoint(crr)) && input)
+                {
+                    tername = GetTerritorios().Where(x => x.GetCoord() == topoint(crr)).Single().GetName();
+                    Console.WriteLine($"{tername} | {topoint(crr)}");
+                }
             }
+            return tername;
         }
+
 
         private int toindex(Point p)
             => channels * p.X + p.Y * stride;
 
         private Point topoint(int index)
-            => new Point((index % stride) / channels, (index / stride) / channels);
+            => new Point((index % stride) / channels, (index / stride));
 
         private bool compare(int index, Color c)
             => bytes[index + 3] == c.A && bytes[index + 2] == c.R && bytes[index + 1] == c.G && bytes[index] == c.B;
@@ -88,7 +101,7 @@ namespace warCWBv2
                     i = 0;
                 }
                 teams[i].InsertTerr(ter);
-                Clear(teams[i++].GetColor(), ter.GetCoord());
+                Clear(teams[i++].GetColor(), ter.GetCoord(), false);
                 
             }
         }
