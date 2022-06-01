@@ -159,6 +159,8 @@
     <None Include="Resources\volume.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\preoff1.png" />
+    <None Include="Resources\seta-direita.png" />
     <None Include="Resources\war.png" />
     <None Include="Resources\Image1.png" />
     <None Include="Resources\login1.png" />

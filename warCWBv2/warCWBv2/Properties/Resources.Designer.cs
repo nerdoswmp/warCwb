@@ -523,9 +523,29 @@ namespace warCWBv2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap preoff1 {
+            get {
+                object obj = ResourceManager.GetObject("preoff1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap seta {
             get {
                 object obj = ResourceManager.GetObject("seta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seta_direita {
+            get {
+                object obj = ResourceManager.GetObject("seta-direita", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -555,16 +575,6 @@ namespace warCWBv2.Properties {
         internal static System.Drawing.Bitmap volume {
             get {
                 object obj = ResourceManager.GetObject("volume", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap war {
-            get {
-                object obj = ResourceManager.GetObject("war", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

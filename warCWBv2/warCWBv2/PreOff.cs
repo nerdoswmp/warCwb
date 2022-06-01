@@ -19,7 +19,7 @@ namespace warCWBv2
         }
         private void PreOff_Load(object sender, EventArgs e)
         {
-            var screen = Properties.Resources.war;
+            var screen = Properties.Resources.preoff1;
             Bitmap bmp = new Bitmap(Width, Height);
             var g = Graphics.FromImage(bmp);
             g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
