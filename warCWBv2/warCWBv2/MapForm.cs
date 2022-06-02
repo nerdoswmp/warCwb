@@ -10,15 +10,19 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Reflection;
+using static warCWBv2.GameScreen;
 
 namespace warCWBv2
 {
     public partial class MapForm : Form
     {
         static List<Territorio> territorioList = new List<Territorio>();
+        Random rand = new Random(Guid.NewGuid().GetHashCode());
         Graphics g;
         List<Zona> zonas = GetZonas();
-        static Team[] teams = CreateTeams();
+        GameScreen gs = PreOff.gs;
+        string selected = "";
+        int step = 0;
         public MapForm()
         {
             InitializeComponent();
@@ -26,6 +30,7 @@ namespace warCWBv2
 
         private void MapForm_Load(object sender, EventArgs e)
         {
+            gs.UpdateLabels();
             pb.Image = new Bitmap(pb.Width, pb.Height);
             g = Graphics.FromImage(pb.Image);
             g.Clear(Color.White);
@@ -34,7 +39,23 @@ namespace warCWBv2
             MapManager mm = new MapManager();
             CreateTerritorio();
             Timer tm = new Timer();
-            tm.Interval = 50;
+            tm.Interval = 60;
+
+            List<Label> labels = new List<Label>();
+
+            for (int i = 0; i < GetTerritorios().Count(); i++)
+            {
+                labels.Add(new Label());
+                labels[i].Name = GetTerritorios()[i].GetName();
+                labels[i].Text = GetTerritorios()[i].GetTroops().ToString();
+                labels[i].Location = GetTerritorios()[i].GetCoord();
+                labels[i].AutoSize = true;
+                labels[i].Font = new Font("Calibri", 10);
+                labels[i].ForeColor = Color.White;
+                labels[i].BackColor = Color.Black;
+                this.pb.Controls.Add(labels[i]);
+                labels[i].Show();
+            }
 
             tm.Tick += delegate
             {
@@ -46,33 +67,158 @@ namespace warCWBv2
             mm.ClearRandom(territorioList);
             mm.Close();
 
+            string tmp = "";
             pb.MouseDown += (o, mea) =>
             {
-                Console.WriteLine(mea.Location.ToString());
-                mm.Initialize();
-                string territorio = mm.Clear(Color.Orange, mea.Location, true);
-                mm.Close();
-                if (territorio != "")
+                Console.WriteLine((int)GetCurrentPlayer().GetAction());
+                switch ((int)GetCurrentPlayer().GetAction())
                 {
-                    foreach (var t in FindTerritorio(territorio).GetAdjacente())
-                    {
-                        var q = GetAllTeams().Where(x => x.GetTerritorios().Contains(t)).Single();
-                        Console.WriteLine($"{t.GetName()} - {q.GetColor()}");
+                    case 0:
                         mm.Initialize();
-                        mm.Clear(Color.Purple, t.GetCoord(), true);
+                        string tname = mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), mea.Location, 2);
+                        if (tname != null) 
+                        {
+                            var terr = FindTerritorio(tname);
+                            terr.AddTroops(2);
+                            var l = labels.Where(x => x.Name == terr.GetName()).Single();
+                            l.Text = terr.GetTroops().ToString();
+                            mm.Close();
+                            GetCurrentPlayer().NextAct();
+                        }
+                        else
+                        {
+                            Console.WriteLine("nope");
+                            mm.Close();
+                        }
+                        tmp = tname;
+                        gs.UpdateLabels();
+                        break;
+                    case 1:
+                        Console.WriteLine(mea.Location.ToString());
+                        mm.Initialize();
+                        string name = mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), mea.Location, 1);
                         mm.Close();
-                    }
+                        int found = -1;
+                        if (name != null)
+                        {
+                            var territorio = FindTerritorio(name);
+                            mm.Initialize();
+                            mm.Clear(GetAllTeams().Where(x => x.GetTerritorios().Contains(territorio))
+                                .Single().GetColor(), territorio.GetCoord(), 1);
+                            mm.Close();
+                            if (FindTerritorio(tmp).GetAdjacente().Contains(territorio))
+                            {
+                                if (rand.Next(1, 7) >= 3)
+                                {
+                                    territorio.RemoveTroops(2);
+                                    if (territorio.GetTroops() <= 0)
+                                    {
+                                        territorio.SetTroop(1);
+                                    }
+                                    FindTerritorio(tmp).RemoveTroops(1);
+
+                                    var l = labels.Where(x => x.Name == territorio.GetName()).Single();
+                                    l.Text = territorio.GetTroops().ToString();
+                                    l = labels.Where(x => x.Name == FindTerritorio(tmp).GetName()).Single();
+                                    l.Text = FindTerritorio(tmp).GetTroops().ToString();
+                                }
+                                else
+                                {
+                                    FindTerritorio(tmp).RemoveTroops(1);
+                                    var l = labels.Where(x => x.Name == FindTerritorio(tmp).GetName()).Single();
+                                    l.Text = FindTerritorio(tmp).GetTroops().ToString();
+                                }
+                                if (territorio.GetTroops() <= 1)
+                                {
+                                    mm.Initialize();
+                                    GetAllTeams().Where(x => x.GetTerritorios().Contains(territorio))
+                                    .Single().RemoveTerr(territorio);
+                                    GetCurrentPlayer().GetTeam().InsertTerr(territorio);
+                                    mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), territorio.GetCoord(), 1);
+                                    GetCurrentPlayer().NextAct();
+                                    gs.UpdateLabels();
+                                    mm.Close();
+                                }
+                                else if (FindTerritorio(tmp).GetTroops() <= 1)
+                                {
+                                    FindTerritorio(tmp).SetTroop(1);
+                                    GetCurrentPlayer().NextAct();
+                                    gs.UpdateLabels();
+                                }
+                                found = 1;
+                                break;
+                            }
+                            
+                            if (found != 1)
+                            {
+                                mm.Initialize();
+                                mm.Clear(GetAllTeams().Where(x => x.GetTerritorios().Contains(territorio))
+                                        .Single().GetColor(), mea.Location, 1);
+                                gs.UpdateLabels();
+                                mm.Close();
+                            }
+                        }
+                        gs.UpdateLabels();
+                        break;
+                    case 2:
+                        Console.WriteLine(step);      
+                        if (step == 0)
+                        {
+                            mm.Initialize();
+                            selected = mm.Clear(Color.Orange, mea.Location, 1);
+                            Console.WriteLine("step 1");
+                            step = 1;
+                            mm.Close();
+                        }
+                        else
+                        {
+                            if (selected != null)
+                            {
+                                mm.Initialize();
+                                string moveto = mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), mea.Location, 2);
+                                mm.Close();
+                                Console.WriteLine("step 2");
+                                if (moveto != null)
+                                {
+                                    Console.WriteLine("step 3");
+                                    var movetoobj = FindTerritorio(moveto);
+                                    foreach (var t in FindTerritorio(selected).GetAdjacente())
+                                    {
+                                        if (t == movetoobj)
+                                        {
+                                            mm.Initialize();
+                                            var selectedobj = FindTerritorio(selected);
+                                            movetoobj.AddTroops(selectedobj.GetTroops() / 2);
+                                            selectedobj.RemoveTroops(selectedobj.GetTroops() / 2);
+                                            var l = labels.Where(x => x.Name == movetoobj.GetName()).Single();
+                                            l.Text = movetoobj.GetTroops().ToString();
+                                            l = labels.Where(x => x.Name == selectedobj.GetName()).Single();
+                                            l.Text = selectedobj.GetTroops().ToString();
+                                            mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), selectedobj.GetCoord(), 1);
+                                            mm.Close();
+                                            GetCurrentPlayer().NextAct();
+                                            step = 0;
+                                            NextPlayer(); 
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("fuck");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("nope");
+                            }
+                        }
+                        gs.UpdateLabels();
+                        break;
+                    case 3:
+                        gs.UpdateLabels();
+                        break;
                 }
             };
-
-            //foreach(var t in FindTerritorio("fazendinha").GetAdjacente()) 
-            //{
-            //    var q = GetAllTeams().Where(x => x.GetTerritorios().Contains(t)).Single();
-            //    Console.WriteLine($"{t.GetName()} - {q.GetColor()}");
-            //    mm.Initialize();
-            //    mm.Clear(Color.Purple, t.GetCoord());
-            //    mm.Close();
-            //}
         }
 
 
@@ -93,17 +239,7 @@ namespace warCWBv2
 
             return list;
         }
-        public static Team[] CreateTeams()
-        {
-            Team team1 = new Team(Color.Red);
-            Team team2 = new Team(Color.Yellow);
-            Team team3 = new Team(Color.Green);
-            Team team4 = new Team(Color.Blue);
 
-            return new Team[] { team1, team2, team3, team4 };
-        }
-
-        // reescrever essa parte inteira
         public void CreateTerritorio()
         {
             List<Territorio> list = new List<Territorio>();
@@ -273,11 +409,6 @@ namespace warCWBv2
                  FindTerritorio("novo mundo"), FindTerritorio("pinheirinho"), FindTerritorio("sitio cercado"), FindTerritorio("parolin"), FindTerritorio("rebouças"),
                 FindTerritorio("jardim das américas"), FindTerritorio("uberaba")});
             // fazer para cada um dos territorios!!!!!!!!!!!
-        }
-
-        public static Team[] GetAllTeams()
-        {
-            return teams;
         }
 
         public static Point[] GetTerritorioCoords()
