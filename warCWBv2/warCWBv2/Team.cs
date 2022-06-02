@@ -36,6 +36,16 @@ namespace warCWBv2
             return false;
         }
 
+        public bool RemoveTerr(Territorio territorio)
+        {
+            if (territorios.Contains(territorio))
+            {
+                territorios.Remove(territorio);
+                return true;
+            }
+            return false;
+        }
+
         public List<Territorio> GetTerritorios()
         {
             return territorios;
