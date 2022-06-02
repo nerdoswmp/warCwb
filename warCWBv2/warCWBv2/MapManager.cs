@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using static warCWBv2.MapForm;
+using static warCWBv2.GameScreen;
 
 namespace warCWBv2
 {
@@ -34,28 +35,33 @@ namespace warCWBv2
             Map.UnlockBits(data);
         }
 
-        public string Clear(Color target, Point p, bool input)
+        public string Clear(Color target, Point p, int input)
         {
             int index = toindex(p);
             Color origin = Color.FromArgb(bytes[index + 3], bytes[index + 2], bytes[index + 1], bytes[index]);
-            if (target.A == origin.A && target.R == origin.R && target.G == origin.G && target.B == origin.B)
-                return "";
-            if (origin.A == 255 && origin.R == 255 && origin.G == 255 && origin.B == 255)
-                return "";
-            if (origin.A == 255 && origin.R == 0 && origin.G == 0 && origin.B == 0)
-                return "";
+            if (target.A == origin.A && target.R == origin.R && target.G == origin.G && target.B == origin.B && input != 2)
+                return null;
+            if (origin.A == 255 && origin.R == 255 && origin.G == 255 && origin.B == 255 && input != 2)
+                return null;
+            if (origin.A == 255 && origin.R == 0 && origin.G == 0 && origin.B == 0 && input != 2)
+                return null;
 
-            return clear(origin, target, index, input);
-
+            switch (input)
+            {
+                case 0: return clear(origin, target, index, 0);
+                case 1: return clear(origin, target, index, 1);
+                case 2: return search(origin, target, index);
+            }
+            return null;
         }
 
-        private string clear(Color origin, Color target, int index, bool input)
+        private string clear(Color origin, Color target, int index, int input)
         {
             Stack<int> stack = new Stack<int>();
             stack.Push(index);
             int crr = -1;
             var t = GetTerritorioCoords();
-            string tername = "";
+            string tername = null;
             while (stack.Count > 0)
             {
                 crr = stack.Pop();
@@ -70,12 +76,48 @@ namespace warCWBv2
                 stack.Push(crr + stride);
                 stack.Push(crr - stride);
 
-                if (t.Contains(topoint(crr)) && input)
+                if (t.Contains(topoint(crr)) && input == 1)
                 {
                     tername = GetTerritorios().Where(x => x.GetCoord() == topoint(crr)).Single().GetName();
                     Console.WriteLine($"{tername} | {topoint(crr)}");
                 }
             }
+            return tername;
+        }
+
+        private string search(Color origin, Color target, int index)
+        {
+            if (target.A != origin.A || target.R != origin.R || target.G != origin.G || target.B != origin.B)
+            {
+                return null;
+            }
+
+            Stack<int> stack = new Stack<int>();
+            stack.Push(index);
+            int crr = -1;
+            var t = GetTerritorioCoords();
+            string tername = null;
+            var tmp = Color.Transparent;
+            while (stack.Count > 0)
+            {
+                crr = stack.Pop();
+                if (!compare(crr, origin))
+                    continue;
+                bytes[crr + 3] = tmp.A;
+                bytes[crr + 2] = tmp.R;
+                bytes[crr + 1] = tmp.G;
+                bytes[crr + 0] = tmp.B;
+                stack.Push(crr + channels);
+                stack.Push(crr - channels);
+                stack.Push(crr + stride);
+                stack.Push(crr - stride);
+
+                if (t.Contains(topoint(crr)))
+                {
+                    tername = GetTerritorios().Where(x => x.GetCoord() == topoint(crr)).Single().GetName();
+                }
+            }
+            clear(tmp, target, index, 1);
             return tername;
         }
 
@@ -101,7 +143,7 @@ namespace warCWBv2
                     i = 0;
                 }
                 teams[i].InsertTerr(ter);
-                Clear(teams[i++].GetColor(), ter.GetCoord(), false);
+                Clear(teams[i++].GetColor(), ter.GetCoord(), 0);
                 
             }
         }
