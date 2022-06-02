@@ -12,7 +12,7 @@ namespace warCWBv2
     {
         private List<Territorio> terAdjacente = new List<Territorio>();
         private Zona zona;
-        private int troops;
+        private int troops = 2;
         private bool bonus;
 
         private Point coord;
@@ -23,7 +23,7 @@ namespace warCWBv2
             this.bonus = bonus;
             this.coord = coord;
             this.name = name.ToLower().Replace("_", "");
-         }
+        }
 
         public void InsertTerr(Territorio[] territorios)
         {
@@ -40,9 +40,19 @@ namespace warCWBv2
         {
             troops += t;
         }
+
+        public void RemoveTroops(int t)
+        {
+            troops -= t;
+        }
         public int GetTroops()
         {
             return troops;
+        }
+
+        public void SetTroop(int troop)
+        {
+            troops = troop;
         }
 
         public bool GetBonus()
