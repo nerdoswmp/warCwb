@@ -12,6 +12,7 @@ namespace warCWBv2
 {
     public partial class PreOff : Form
     {
+        public static GameScreen gs;
         public PreOff()
         {
             InitializeComponent();
@@ -31,9 +32,11 @@ namespace warCWBv2
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            gs = new GameScreen();
+            gs.Show();
             this.Close();
-            MapForm mapForm = new MapForm();
-            mapForm.Show();
         }
+
+
     }
 }
