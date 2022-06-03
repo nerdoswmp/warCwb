@@ -10,9 +10,10 @@ namespace warCWBv2
 {
     public class Territorio
     {
+        static Random rand = new Random(Guid.NewGuid().GetHashCode());
         private List<Territorio> terAdjacente = new List<Territorio>();
         private Zona zona;
-        private int troops = 2;
+        private int troops = rand.Next(2,4);
         private bool bonus;
 
         private Point coord;

@@ -163,7 +163,7 @@ namespace warCWBv2
                 mm.Close();
                 if (FindTerritorio(tmp).GetAdjacente().Contains(territorio))
                 {
-                    if (rand.Next(1, 7) >= 3)
+                    if (rand.Next(1, 7) > 3)
                     {
                         territorio.RemoveTroops(2);
                         if (territorio.GetTroops() <= 0)

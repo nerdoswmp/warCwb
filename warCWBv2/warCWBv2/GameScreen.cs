@@ -126,7 +126,7 @@ namespace warCWBv2
             switch (GetCurrentPlayer().GetObjective())
             {
                 case 0:
-                    text = "Conquistar o CIC";
+                    text = "Conquistar CIC e PORTÃO";
                     break;
                 case 1:
                     text = "Existir";
