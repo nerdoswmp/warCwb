@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 using static warCWBv2.MapForm;
 
 namespace warCWBv2
@@ -17,6 +18,9 @@ namespace warCWBv2
         static Player[] players = CreatePlayers();
         static int current = 0;
         int turn = 0;
+        SoundPlayer player = new SoundPlayer(Properties.Resources.trilha);
+        SoundPlayer familia = new SoundPlayer(Properties.Resources.A_Família_Folhas_voltou___);
+
         public GameScreen()
         {
             InitializeComponent();
@@ -28,7 +32,7 @@ namespace warCWBv2
             this.panel1.Controls.Add(mapForm);
             mapForm.Show();
 
-            label3.Text = $"Turn {turn++}";
+            label3.Text = $"Turno {turn++}";
 
             bt_Skip.Enabled = false;
         }
@@ -39,16 +43,16 @@ namespace warCWBv2
             switch ((int)GetCurrentPlayer().GetAction())
             {
                 case 0:
-                    label2.Text = "Place Troops";
+                    label2.Text = "Colocar Tropas";
                     break;
                 case 1:
-                    label2.Text = "Attack";
+                    label2.Text = "Atacar";
                     break;
                 case 2:
-                    label2.Text = "Move Troops";
+                    label2.Text = "Mover Tropas";
                     break;
                 case 3:
-                    label2.Text = "Waiting";
+                    label2.Text = "Aguardando";
                     break;
             }
             this.BackColor = GetCurrentPlayer().GetTeam().GetColor();
@@ -56,7 +60,7 @@ namespace warCWBv2
 
         public void UpdateTurn()
         {
-            label3.Text = $"Turn {turn++}";
+            label3.Text = $"Turno {turn++}";
         }
         public static Player GetCurrentPlayer()
         {
@@ -134,6 +138,8 @@ namespace warCWBv2
             }
 
             MessageBox.Show(text);
+            familia.Play();
+            player.Play();
         }
     }
 }

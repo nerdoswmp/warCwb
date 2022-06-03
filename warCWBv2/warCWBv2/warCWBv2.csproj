@@ -179,6 +179,7 @@
     <None Include="Resources\assets_mapa\1mapa cwb outline.png" />
     <None Include="fullmap.bmp" />
     <None Include="mapfull.bmp" />
+    <None Include="Resources\A-Família-Folhas-voltou_-_.wav" />
     <Content Include="Resources\assets_mapa\AGUA VERDE.png" />
     <Content Include="Resources\assets_mapa\ALTO BOQUEIRAO.png" />
     <Content Include="Resources\assets_mapa\ALTO DA XV.png" />

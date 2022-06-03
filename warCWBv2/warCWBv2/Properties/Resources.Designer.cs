@@ -441,6 +441,15 @@ namespace warCWBv2.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream A_Família_Folhas_voltou___ {
+            get {
+                return ResourceManager.GetStream("A_Família_Folhas_voltou___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap fullmap {
