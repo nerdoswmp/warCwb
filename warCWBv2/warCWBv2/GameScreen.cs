@@ -16,11 +16,11 @@ namespace warCWBv2
         public static Team[] teams = CreateTeams();
         static Player[] players = CreatePlayers();
         static int current = 0;
+        int turn = 0;
         public GameScreen()
         {
             InitializeComponent();
         }
-
         private void GameScreen_Load(object sender, EventArgs e)
         {
             MapForm mapForm = new MapForm() { TopLevel = false, TopMost = true };
@@ -28,12 +28,14 @@ namespace warCWBv2
             this.panel1.Controls.Add(mapForm);
             mapForm.Show();
 
-            
+            label3.Text = $"Turn {turn++}";
+
+            bt_Skip.Enabled = false;
         }
 
         public void UpdateLabels()
         {
-            label1.Text = GetCurrentPlayer().GetTeam().GetColor().Name;
+            label1.Text = $"Player: {GetCurrentPlayer().GetTeam().GetColor().Name}";
             switch ((int)GetCurrentPlayer().GetAction())
             {
                 case 0:
@@ -49,6 +51,12 @@ namespace warCWBv2
                     label2.Text = "Waiting";
                     break;
             }
+            this.BackColor = GetCurrentPlayer().GetTeam().GetColor();
+        }
+
+        public void UpdateTurn()
+        {
+            label3.Text = $"Turn {turn++}";
         }
         public static Player GetCurrentPlayer()
         {
@@ -82,10 +90,10 @@ namespace warCWBv2
 
         public static Player[] CreatePlayers()
         {
-            Player p1 = new Player(teams[0]);
-            Player p2 = new Player(teams[1]);
-            Player p3 = new Player(teams[2]);
-            Player p4 = new Player(teams[3]);
+            Player p1 = new Player(teams[0], 0);
+            Player p2 = new Player(teams[1], 0);
+            Player p3 = new Player(teams[2], 0);
+            Player p4 = new Player(teams[3], 0);
 
             return new Player[] { p1, p2, p3, p4 };
         }
@@ -94,6 +102,38 @@ namespace warCWBv2
         public static Team[] GetAllTeams()
         {
             return teams;
+        }
+
+        public void EnableSkip()
+        {
+            bt_Skip.Enabled = true;
+        }
+
+        private void bt_Skip_Click_1(object sender, EventArgs e)
+        {
+            GetCurrentPlayer().NextAct();
+            if((int)GetCurrentPlayer().GetAction() == 3)
+            {
+                NextPlayer();
+            }
+            UpdateLabels();
+            UpdateTurn();
+        }
+
+        private void bt_Objective_Click(object sender, EventArgs e)
+        {
+            string text = "";
+            switch (GetCurrentPlayer().GetObjective())
+            {
+                case 0:
+                    text = "Conquistar o CIC";
+                    break;
+                case 1:
+                    text = "Existir";
+                    break;
+            }
+
+            MessageBox.Show(text);
         }
     }
 }

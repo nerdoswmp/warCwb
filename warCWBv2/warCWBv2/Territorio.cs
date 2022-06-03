@@ -20,7 +20,10 @@ namespace warCWBv2
         public Territorio(bool bonus, Point coord, Zona zona, string name)
         {
             this.zona = zona;
-            this.bonus = bonus;
+            if (bonus)
+            {
+                AddTroops(3);
+            }
             this.coord = coord;
             this.name = name.ToLower().Replace("_", "");
         }

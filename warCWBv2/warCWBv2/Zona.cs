@@ -10,8 +10,9 @@ namespace warCWBv2
     {
         private List<Territorio> territorios = new List<Territorio>();
         private int bonusTroops { get; }
+        private string name;
 
-        public Zona(int troops) { this.bonusTroops = troops;}
+        public Zona(int troops, string name) { this.bonusTroops = troops; this.name = name; }
         public bool InsertTerr(Territorio territorio)
         {
             if (!territorios.Contains(territorio))
@@ -25,6 +26,11 @@ namespace warCWBv2
         public List<Territorio> GetTerritorios()
         {
             return territorios;
+        }
+
+        public string GetName()
+        {
+            return name;
         }
     }
 }
