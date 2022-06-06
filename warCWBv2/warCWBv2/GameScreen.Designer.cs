@@ -42,18 +42,16 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.Location = new System.Drawing.Point(399, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(266, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(681, 1108);
+            this.panel1.Size = new System.Drawing.Size(454, 720);
             this.panel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(24, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 24);
             this.label1.TabIndex = 0;
@@ -63,8 +61,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 77);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(24, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 24);
             this.label2.TabIndex = 1;
@@ -74,8 +71,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(33, 128);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(22, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 31);
             this.label3.TabIndex = 2;
@@ -85,10 +81,9 @@
             // 
             this.bt_Skip.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_Skip.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Skip.Location = new System.Drawing.Point(44, 852);
-            this.bt_Skip.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bt_Skip.Location = new System.Drawing.Point(29, 554);
             this.bt_Skip.Name = "bt_Skip";
-            this.bt_Skip.Size = new System.Drawing.Size(310, 95);
+            this.bt_Skip.Size = new System.Drawing.Size(207, 62);
             this.bt_Skip.TabIndex = 4;
             this.bt_Skip.Text = "Pular Turno";
             this.bt_Skip.UseVisualStyleBackColor = true;
@@ -102,17 +97,15 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(399, 202);
+            this.panel2.Size = new System.Drawing.Size(266, 131);
             this.panel2.TabIndex = 5;
             // 
             // bt_Objective
             // 
-            this.bt_Objective.Location = new System.Drawing.Point(267, 45);
-            this.bt_Objective.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bt_Objective.Location = new System.Drawing.Point(178, 29);
             this.bt_Objective.Name = "bt_Objective";
-            this.bt_Objective.Size = new System.Drawing.Size(105, 108);
+            this.bt_Objective.Size = new System.Drawing.Size(70, 70);
             this.bt_Objective.TabIndex = 6;
             this.bt_Objective.Text = "Mostrar Objetivo";
             this.bt_Objective.UseVisualStyleBackColor = true;
@@ -120,15 +113,14 @@
             // 
             // GameScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(1080, 1061);
+            this.ClientSize = new System.Drawing.Size(720, 719);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.bt_Skip);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "GameScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameScreen";

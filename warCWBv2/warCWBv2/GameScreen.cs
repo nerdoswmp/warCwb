@@ -67,6 +67,11 @@ namespace warCWBv2
             return players[current];
         }
 
+        //public static void RemovePlayer()
+        //{
+        //    players[]
+        //}
+
         public static void NextPlayer()
         {
             if (current >= 3)
