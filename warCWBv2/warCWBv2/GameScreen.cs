@@ -126,20 +126,23 @@ namespace warCWBv2
 
         private void bt_Objective_Click(object sender, EventArgs e)
         {
-            string text = "";
-            switch (GetCurrentPlayer().GetObjective())
-            {
-                case 0:
-                    text = "Conquistar CIC e PORTÃO";
-                    break;
-                case 1:
-                    text = "Existir";
-                    break;
-            }
+            vitoria form = new vitoria();
+            form.Show();
+            this.Hide();
+            //string text = "";
+            //switch (GetCurrentPlayer().GetObjective())
+            //{
+            //    case 0:
+            //        text = "Conquistar CIC e PORTÃO";
+            //        break;
+            //    case 1:
+            //        text = "Existir";
+            //        break;
+            //}
 
-            MessageBox.Show(text);
-            familia.Play();
-            player.Play();
+            //MessageBox.Show(text);
+            //familia.Play();
+            //player.Play();
         }
     }
 }

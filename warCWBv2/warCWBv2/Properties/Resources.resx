@@ -124,11 +124,17 @@
   <data name="_SANTA FELICIDADE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\SANTA FELICIDADE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="preoff1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preoff1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_CAJURU" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\CAJURU.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_PINHEIRINHO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\PINHEIRINHO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_UMBARA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\assets_mapa\UMBARA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_BOA VISTA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\BOA VISTA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,14 +145,17 @@
   <data name="_JARDIM DAS AMERICAS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\JARDIM DAS AMERICAS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_BOQUEIRAO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\assets_mapa\BOQUEIRAO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="seta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\seta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_ORLEANS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\ORLEANS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_ALTO DA XV" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\ALTO DA XV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -159,9 +168,6 @@
   </data>
   <data name="_CACHOEIRA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\CACHOEIRA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="login2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_FAZENDINHA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\FAZENDINHA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,8 +187,11 @@
   <data name="fullmap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\fullmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_BATEL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\BATEL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_BUTIATUVINHA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\assets_mapa\BUTIATUVINHA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="A_Família_Folhas_voltou___" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\A-Família-Folhas-voltou_-_.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="imagemPrincipal.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagemPrincipal.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,11 +220,17 @@
   <data name="_REBOUCAS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\REBOUCAS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="seta-direita" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seta-direita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_GANCHINHO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\GANCHINHO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_BUTIATUVINHA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\BUTIATUVINHA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="X2Download_com_TV_Globo__Tema_da_Vitória__Ayrton_Senna___128_kbps_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\X2Download.com-TV-Globo_-Tema-da-Vitória-_Ayrton-Senna_-_128-kbps_.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_ORLEANS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\assets_mapa\ORLEANS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_PASSAUNA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\PASSAUNA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,11 +247,11 @@
   <data name="mute" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mute.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_TATUQUARA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\assets_mapa\TATUQUARA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_PORTAO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\PORTAO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_BOQUEIRAO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\BOQUEIRAO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_CENTRO CIVICO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\CENTRO CIVICO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,8 +271,8 @@
   <data name="_SANTA CANDIDA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\SANTA CANDIDA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_TATUQUARA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\TATUQUARA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_BATEL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\assets_mapa\BATEL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,16 +280,10 @@
   <data name="_MERCES" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\assets_mapa\MERCES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_UMBARA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assets_mapa\UMBARA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="login2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="seta-direita" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\seta-direita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="preoff1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\preoff1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="A_Família_Folhas_voltou___" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\A-Família-Folhas-voltou_-_.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="menubt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menubt.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

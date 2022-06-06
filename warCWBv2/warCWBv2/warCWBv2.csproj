@@ -77,6 +77,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="vitoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vitoria.Designer.cs">
+      <DependentUpon>vitoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="vitoria.resx">
+      <DependentUpon>vitoria.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -168,6 +177,9 @@
     <None Include="Resources\volume.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\menubt.PNG" />
+    <None Include="Resources\X2Download.com-TV-Globo_-Tema-da-Vitória-_Ayrton-Senna_-_128-kbps_.wav" />
+    <None Include="Resources\vit.png" />
     <None Include="Resources\preoff1.png" />
     <None Include="Resources\seta-direita.png" />
     <None Include="Resources\war.png" />
