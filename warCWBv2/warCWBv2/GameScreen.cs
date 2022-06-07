@@ -43,7 +43,7 @@ namespace warCWBv2
             switch ((int)GetCurrentPlayer().GetAction())
             {
                 case 0:
-                    label2.Text = "Colocar Tropas";
+                    label2.Text = $"Colocar Tropas ({GetCurrentPlayer().GetTeam().GetTroopsToInsert()})";
                     break;
                 case 1:
                     label2.Text = "Atacar";
@@ -67,11 +67,6 @@ namespace warCWBv2
             return players[current];
         }
 
-        //public static void RemovePlayer()
-        //{
-        //    players[]
-        //}
-
         public static void NextPlayer()
         {
             if (current >= 3)
@@ -86,6 +81,12 @@ namespace warCWBv2
             {
                 current++;
             }
+
+            if (GetCurrentPlayer().GetTeam().GetTerritorios().Count() == 0)
+            {
+                MessageBox.Show("perdeu");
+                NextPlayer();
+            }
         }
         public static Team[] CreateTeams()
         {
@@ -99,10 +100,12 @@ namespace warCWBv2
 
         public static Player[] CreatePlayers()
         {
-            Player p1 = new Player(teams[0], 0);
-            Player p2 = new Player(teams[1], 0);
-            Player p3 = new Player(teams[2], 0);
-            Player p4 = new Player(teams[3], 0);
+            Random rand = new Random(Guid.NewGuid().GetHashCode());
+
+            Player p1 = new Player(teams[0], rand.Next(0, 5));
+            Player p2 = new Player(teams[1], rand.Next(0, 5));
+            Player p3 = new Player(teams[2], rand.Next(0, 5));
+            Player p4 = new Player(teams[3], rand.Next(0, 5));
 
             return new Player[] { p1, p2, p3, p4 };
         }
@@ -125,27 +128,38 @@ namespace warCWBv2
             {
                 NextPlayer();
             }
+            if (GetCurrentPlayer().GetTeam().GetTerritorios().Count() == 0)
+            {
+                MessageBox.Show("perdeu");
+                NextPlayer();
+            }
             UpdateLabels();
             UpdateTurn();
         }
 
         private void bt_Objective_Click(object sender, EventArgs e)
         {
-            vitoria form = new vitoria();
-            form.Show();
-            this.Hide();
-            //string text = "";
-            //switch (GetCurrentPlayer().GetObjective())
-            //{
-            //    case 0:
-            //        text = "Conquistar CIC e PORTÃO";
-            //        break;
-            //    case 1:
-            //        text = "Existir";
-            //        break;
-            //}
+            string text = "";
+            switch (GetCurrentPlayer().GetObjective())
+            {
+                case 0:
+                    text = "Conquistar CIC, PORTÃO e CAJURU";
+                    break;
+                case 1:
+                    text = "Conquistar PINHEIRINHO, BAIRRO NOVO e BOA VISTA";
+                    break;
+                case 2:
+                    text = "Conquistar PINHEIRINHO, BOQUEIRÃO e SANTA FELICIDADE";
+                    break;
+                case 3:
+                    text = "Conquistar MATRIZ e PORTÃO";
+                    break;
+                case 4:
+                    text = "Conquistar CIC, BAIRRO NOVO e BOA VISTA";
+                    break;
+            }
 
-            //MessageBox.Show(text);
+            MessageBox.Show(text);
             //familia.Play();
             //player.Play();
         }

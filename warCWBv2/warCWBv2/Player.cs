@@ -52,7 +52,46 @@ namespace warCWBv2
                 case 0:
                     foreach (var z in team.GetZonas())
                     {
-                        if (z.GetName() == "CIC" || z.GetName() == "PORTÃO")
+                        if (z.GetName() == "CIC" || z.GetName() == "PORTÃO" || z.GetName() == "CAJURU")
+                        {
+                            tmp++;
+                        }
+                    }
+                    if (tmp == 3)
+                    {
+                        win = true;
+                    }
+                    break;
+                case 1:
+                    foreach (var z in team.GetZonas())
+                    {
+                        if (z.GetName() == "PINHEIRINHO" || z.GetName() == "BAIRRO NOVO" || z.GetName() == "BOA VISTA")
+                        {
+                            tmp++;
+                        }
+                    }
+                    if (tmp == 3)
+                    {
+                        win = true;
+                    }
+                    break;
+                case 2:
+                    foreach (var z in team.GetZonas())
+                    {
+                        if (z.GetName() == "BOQUEIRÃO" || z.GetName() == "PINHEIRINHO" || z.GetName() == "SANTA FELICIDADE")
+                        {
+                            tmp++;
+                        }
+                    }
+                    if (tmp == 3)
+                    {
+                        win = true;
+                    }
+                    break;
+                case 3:
+                    foreach (var z in team.GetZonas())
+                    {
+                        if (z.GetName() == "MATRIZ" || z.GetName() == "PORTÃO")
                         {
                             tmp++;
                         }
@@ -62,9 +101,20 @@ namespace warCWBv2
                         win = true;
                     }
                     break;
-                case 1:
-                    win = true;
+                case 4:
+                    foreach (var z in team.GetZonas())
+                    {
+                        if (z.GetName() == "CIC" || z.GetName() == "BOA VISTA" || z.GetName() == "BAIRRO NOVO")
+                        {
+                            tmp++;
+                        }
+                    }
+                    if (tmp == 3)
+                    {
+                        win = true;
+                    }
                     break;
+
             }
 
             return win;

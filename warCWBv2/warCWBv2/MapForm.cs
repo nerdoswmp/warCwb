@@ -74,6 +74,7 @@ namespace warCWBv2
             {
                 //Console.WriteLine((int)GetCurrentPlayer().GetAction());
                 //Console.WriteLine(turn0);
+
                 if (turn0 >= 4)
                 {
                     gs.EnableSkip();
@@ -97,10 +98,8 @@ namespace warCWBv2
                     foreach (var z in zonas)
                     {
                         GetCurrentPlayer().GetTeam().InsertZona(z);
-
-
-
                     }
+                    GetCurrentPlayer().GetTeam().UpdateToInsert();
 
                     foreach (var y in GetCurrentPlayer().GetTeam().GetZonas())
                     {
@@ -110,12 +109,11 @@ namespace warCWBv2
                     if (GetCurrentPlayer().ValidateObjective())
                     {
                         MessageBox.Show($"Player {GetCurrentPlayer().GetTeam().GetColor().Name} wins");
+                        vitoria form = new vitoria();
+                        form.Show();
+                        this.Hide();
                     }
 
-                    if (GetCurrentPlayer().GetTeam().GetTerritorios().Count() == 0)
-                    {
-                        MessageBox.Show("perdeu");
-                    }
                 }
                 else
                 {
@@ -136,7 +134,7 @@ namespace warCWBv2
             if (tname != null)
             {
                 var terr = FindTerritorio(tname);
-                terr.AddTroops(2);
+                terr.AddTroops(GetCurrentPlayer().GetTeam().GetTroopsToInsert());
                 UpdateTroopLabels();
                 mm.Close();
                 GetCurrentPlayer().NextAct();
@@ -209,9 +207,12 @@ namespace warCWBv2
                         if (territorio.GetTroops() <= 1)
                         {
                             mm.Initialize();
+
                             GetAllTeams().Where(x => x.GetTerritorios().Contains(territorio))
                             .Single().RemoveTerr(territorio);
+
                             GetCurrentPlayer().GetTeam().InsertTerr(territorio);
+
                             mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), territorio.GetCoord(), 1);
                             GetCurrentPlayer().NextAct();
                             gs.UpdateLabels();
