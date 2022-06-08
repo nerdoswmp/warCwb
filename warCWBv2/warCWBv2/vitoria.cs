@@ -24,7 +24,7 @@ namespace warCWBv2
         {
             SoundPlayer.Stop();
             this.Close();
-            Form1 form1 = new Form1();
+            WarCWB form1 = new WarCWB();
             form1.Show();
         }
     }

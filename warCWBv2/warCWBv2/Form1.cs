@@ -12,10 +12,10 @@ using System.Runtime.InteropServices;
 
 namespace warCWBv2
 {
-    public partial class Form1 : Form
+    public partial class WarCWB : Form
     {
         SoundPlayer player = new SoundPlayer(Properties.Resources.trilha);
-        public Form1()
+        public WarCWB()
         {
             
             InitializeComponent();

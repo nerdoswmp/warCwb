@@ -51,6 +51,9 @@
     <StartupObject>
     </StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Conceitual.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -177,6 +180,9 @@
     <None Include="Resources\volume.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\iconmap.png" />
+    <None Include="Resources\flash-cards.png" />
+    <None Include="Resources\question.png" />
     <None Include="Resources\menubt.PNG" />
     <None Include="Resources\X2Download.com-TV-Globo_-Tema-da-Vitória-_Ayrton-Senna_-_128-kbps_.wav" />
     <None Include="Resources\vit.png" />
@@ -192,6 +198,7 @@
     <None Include="fullmap.bmp" />
     <None Include="mapfull.bmp" />
     <None Include="Resources\A-Família-Folhas-voltou_-_.wav" />
+    <Content Include="Conceitual.ico" />
     <Content Include="Resources\assets_mapa\AGUA VERDE.png" />
     <Content Include="Resources\assets_mapa\ALTO BOQUEIRAO.png" />
     <Content Include="Resources\assets_mapa\ALTO DA XV.png" />

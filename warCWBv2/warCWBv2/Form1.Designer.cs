@@ -1,6 +1,6 @@
 ﻿namespace warCWBv2
 {
-    partial class Form1
+    partial class WarCWB
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WarCWB));
             this.btnOn = new System.Windows.Forms.Button();
             this.volume = new System.Windows.Forms.PictureBox();
             this.mute = new System.Windows.Forms.PictureBox();
@@ -95,13 +96,12 @@
             this.btnOff.UseVisualStyleBackColor = false;
             this.btnOff.Click += new System.EventHandler(this.btnOff_Click);
             // 
-            // Form1
+            // WarCWB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(720, 720);
-            this.ControlBox = false;
             this.Controls.Add(this.btnOff);
             this.Controls.Add(this.mute);
             this.Controls.Add(this.volume);
@@ -109,7 +109,10 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "WarCWB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

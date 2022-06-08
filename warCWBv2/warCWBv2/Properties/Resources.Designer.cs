@@ -452,9 +452,29 @@ namespace warCWBv2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap flash_cards {
+            get {
+                object obj = ResourceManager.GetObject("flash-cards", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fullmap {
             get {
                 object obj = ResourceManager.GetObject("fullmap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconmap {
+            get {
+                object obj = ResourceManager.GetObject("iconmap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -545,6 +565,16 @@ namespace warCWBv2.Properties {
         internal static System.Drawing.Bitmap preoff1 {
             get {
                 object obj = ResourceManager.GetObject("preoff1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap question {
+            get {
+                object obj = ResourceManager.GetObject("question", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

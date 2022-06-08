@@ -24,7 +24,7 @@ namespace warCWBv2
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            WarCWB form1 = new WarCWB();
             form1.Show();
             this.Close();
         }
