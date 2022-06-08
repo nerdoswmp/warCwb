@@ -208,6 +208,11 @@ namespace warCWBv2
                         {
                             mm.Initialize();
                             territorio.SetTroop(1);
+                            FindTerritorio(tmp).RemoveTroops(1);
+                            if (FindTerritorio(tmp).GetTroops() <= 0)
+                            {
+                                FindTerritorio(tmp).SetTroop(1);
+                            }
                             UpdateTroopLabels();
                             GetAllTeams().Where(x => x.GetTerritorios().Contains(territorio))
                             .Single().RemoveTerr(territorio);
