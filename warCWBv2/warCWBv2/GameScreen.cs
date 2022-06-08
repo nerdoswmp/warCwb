@@ -20,6 +20,7 @@ namespace warCWBv2
         int turn = 0;
         SoundPlayer player = new SoundPlayer(Properties.Resources.trilha);
         SoundPlayer familia = new SoundPlayer(Properties.Resources.A_Família_Folhas_voltou___);
+        MapForm mapForm;
 
         public GameScreen()
         {
@@ -27,7 +28,7 @@ namespace warCWBv2
         }
         private void GameScreen_Load(object sender, EventArgs e)
         {
-            MapForm mapForm = new MapForm() { TopLevel = false, TopMost = true };
+            mapForm = new MapForm() { TopLevel = false, TopMost = true };
 
             this.panel1.Controls.Add(mapForm);
             mapForm.Show();
@@ -135,6 +136,7 @@ namespace warCWBv2
             }
             UpdateLabels();
             UpdateTurn();
+            mapForm.ResetVars();
         }
 
         private void bt_Objective_Click(object sender, EventArgs e)

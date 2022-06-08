@@ -17,14 +17,15 @@ namespace warCWBv2
     public partial class MapForm : Form
     {
         static List<Territorio> territorioList = new List<Territorio>();
+        static string selected = "";
+        static string tmp = "";
+        static int step = 0;
         Label[] labels = new Label[38];
         Random rand = new Random(Guid.NewGuid().GetHashCode());
         Graphics g;
         List<Zona> zonas = GetZonas();
         GameScreen gs = PreOff.gs;
-        string selected = "";
-        string tmp = "";
-        int step = 0;
+        MapManager mm = new MapManager();
         public MapForm()
         {
             InitializeComponent();
@@ -38,7 +39,6 @@ namespace warCWBv2
             g.Clear(Color.White);
             pb.Refresh();
 
-            MapManager mm = new MapManager();
             CreateTerritorio();
             Timer tm = new Timer();
             tm.Interval = 60;
@@ -567,6 +567,16 @@ namespace warCWBv2
             {
                 l.Text = FindTerritorio(l.Name).GetTroops().ToString();
             }
+        }
+
+        public void ResetVars()
+        {
+            step = 0;
+            selected = "";
+            tmp = "";
+            mm.Initialize();
+            mm.ReClear();
+            mm.Close();
         }
     }
 
