@@ -193,7 +193,7 @@ namespace warCWBv2
                             territorio.RemoveTroops(2);
                             if (territorio.GetTroops() <= 0)
                             {
-                                territorio.SetTroop(1);
+                                territorio.SetTroop(0);
                             }
                             FindTerritorio(tmp).RemoveTroops(1);
 
@@ -204,17 +204,18 @@ namespace warCWBv2
                             FindTerritorio(tmp).RemoveTroops(1);
                             UpdateTroopLabels();
                         }
-                        if (territorio.GetTroops() <= 1)
+                        if (territorio.GetTroops() <= 0)
                         {
                             mm.Initialize();
-
+                            territorio.SetTroop(1);
+                            UpdateTroopLabels();
                             GetAllTeams().Where(x => x.GetTerritorios().Contains(territorio))
                             .Single().RemoveTerr(territorio);
 
                             GetCurrentPlayer().GetTeam().InsertTerr(territorio);
 
                             mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), territorio.GetCoord(), 1);
-                            GetCurrentPlayer().NextAct();
+                            //GetCurrentPlayer().NextAct();
                             gs.UpdateLabels();
                             gs.UpdateTurn();
                             step = 0;
@@ -226,7 +227,7 @@ namespace warCWBv2
                         else if (FindTerritorio(tmp).GetTroops() <= 1)
                         {
                             FindTerritorio(tmp).SetTroop(1);
-                            GetCurrentPlayer().NextAct();
+                            //GetCurrentPlayer().NextAct();
                             gs.UpdateLabels();
                             gs.UpdateTurn();
 
