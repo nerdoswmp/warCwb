@@ -1,6 +1,6 @@
 ﻿namespace warCWBv2
 {
-    partial class WarCWB
+    partial class Form1
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WarCWB));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnOn = new System.Windows.Forms.Button();
             this.volume = new System.Windows.Forms.PictureBox();
             this.mute = new System.Windows.Forms.PictureBox();
@@ -96,7 +96,7 @@
             this.btnOff.UseVisualStyleBackColor = false;
             this.btnOff.Click += new System.EventHandler(this.btnOff_Click);
             // 
-            // WarCWB
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,7 +112,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "WarCWB";
+            this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

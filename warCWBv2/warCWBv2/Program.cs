@@ -16,7 +16,7 @@ namespace warCWBv2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WarCWB());
+            Application.Run(new Form1());
         }
     }
 }
