@@ -639,6 +639,16 @@ namespace warCWBv2.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warMM {
+            get {
+                object obj = ResourceManager.GetObject("warMM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.IO.UnmanagedMemoryStream semelhante a System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream X2Download_com_TV_Globo__Tema_da_Vitória__Ayrton_Senna___128_kbps_ {
