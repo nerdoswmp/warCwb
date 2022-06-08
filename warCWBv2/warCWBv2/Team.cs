@@ -21,7 +21,7 @@ namespace warCWBv2
 
         public void RefreshToInsert()
         {
-            troopsToInsert = 2 + zonas.Count() + (territorios.Count()/2)-2;
+            troopsToInsert = 2 + (zonas.Count()*2) + (territorios.Count()/2)-2;
         }
 
         public int GetTroopsToInsert()
