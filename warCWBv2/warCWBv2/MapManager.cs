@@ -149,5 +149,14 @@ namespace warCWBv2
                 
             }
         }
+
+        public void ReClear()
+        {
+            foreach (var t in GetTerritorios())
+            {
+                var color = GetAllTeams().Where(x => x.GetTerritorios().Contains(t)).Single().GetColor();
+                Clear(color, t.GetCoord(), 1);
+            }
+        }
     }
 }

@@ -57,30 +57,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("3ds", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(10, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 22);
+            this.label1.Size = new System.Drawing.Size(60, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("3ds", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(10, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 23);
+            this.label2.Size = new System.Drawing.Size(66, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("3ds", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(6, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 31);
+            this.label3.Size = new System.Drawing.Size(86, 31);
             this.label3.TabIndex = 2;
             this.label3.Text = "label3";
             // 
@@ -88,7 +88,7 @@
             // 
             this.bt_Skip.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_Skip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Skip.Font = new System.Drawing.Font("3ds", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Skip.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Skip.Location = new System.Drawing.Point(29, 564);
             this.bt_Skip.Name = "bt_Skip";
             this.bt_Skip.Size = new System.Drawing.Size(207, 62);
@@ -100,7 +100,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.Controls.Add(this.bt_Objective);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
@@ -112,8 +111,8 @@
             // bt_Objective
             // 
             this.bt_Objective.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bt_Objective.Font = new System.Drawing.Font("3ds", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Objective.Location = new System.Drawing.Point(178, 29);
+            this.bt_Objective.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Objective.Location = new System.Drawing.Point(14, 137);
             this.bt_Objective.Name = "bt_Objective";
             this.bt_Objective.Size = new System.Drawing.Size(70, 70);
             this.bt_Objective.TabIndex = 6;
@@ -163,6 +162,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(720, 719);
+            this.Controls.Add(this.bt_Objective);
             this.Controls.Add(this.picMap);
             this.Controls.Add(this.picCards);
             this.Controls.Add(this.picHelp);

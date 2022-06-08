@@ -10,7 +10,7 @@ namespace warCWBv2
 {
     public class Team
     {
-        public Color Color;
+        private Color Color;
         private List<Zona> zonas = new List<Zona>();
         private List<Territorio> territorios = new List<Territorio>();
         private int troopsToInsert = 5;
