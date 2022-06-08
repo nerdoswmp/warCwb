@@ -40,5 +40,15 @@ namespace warCWBv2
             screen.Dispose();
             GC.Collect(2);
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("O sistema Online ainda não foi implementado");
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("O sistema Online ainda não foi implementado");
+        }
     }
 }

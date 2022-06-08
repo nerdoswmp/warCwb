@@ -176,7 +176,8 @@ namespace warCWBv2
 
         private void picMap_Click(object sender, EventArgs e)
         {
-            
+            Mapa form = new Mapa();
+            form.Show();
         }
     }
 }
