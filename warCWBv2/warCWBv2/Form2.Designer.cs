@@ -112,7 +112,7 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.dateTimePicker1.Location = new System.Drawing.Point(304, 567);
+            this.dateTimePicker1.Location = new System.Drawing.Point(302, 567);
             this.dateTimePicker1.MaxDate = new System.DateTime(2014, 6, 24, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(1910, 6, 30, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -148,7 +148,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("3ds", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(330, 244);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 25);
@@ -158,10 +158,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("3ds", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(310, 612);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(307, 613);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 25);
+            this.label2.Size = new System.Drawing.Size(106, 25);
             this.label2.TabIndex = 13;
             this.label2.Text = "Cadastrar";
             // 
@@ -182,9 +182,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(720, 720);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dateTimePicker1);
@@ -195,6 +193,8 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtSenhaLogin);
             this.Controls.Add(this.txtEmailLogin);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

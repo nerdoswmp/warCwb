@@ -452,6 +452,16 @@ namespace warCWBv2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap duas_folhas_de_planta_no_outono {
+            get {
+                object obj = ResourceManager.GetObject("duas-folhas-de-planta-no-outono", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flash_cards {
             get {
                 object obj = ResourceManager.GetObject("flash-cards", resourceCulture);
@@ -634,6 +644,16 @@ namespace warCWBv2.Properties {
         internal static System.Drawing.Bitmap volume {
             get {
                 object obj = ResourceManager.GetObject("volume", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warm2 {
+            get {
+                object obj = ResourceManager.GetObject("warm2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

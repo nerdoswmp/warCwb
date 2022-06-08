@@ -166,7 +166,7 @@ namespace warCWBv2
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("quer ajuda é?");
+            MessageBox.Show("se vira nerdola");
         }
 
         private void picCards_Click(object sender, EventArgs e)
@@ -178,6 +178,11 @@ namespace warCWBv2
         {
             Mapa form = new Mapa();
             form.Show();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            familia.Play();
         }
     }
 }
