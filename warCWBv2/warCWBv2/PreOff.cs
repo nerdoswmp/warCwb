@@ -32,9 +32,24 @@ namespace warCWBv2
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            gs = new GameScreen();
-            gs.Show();
-            this.Close();
+            if(comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 0 && comboBox3.SelectedIndex == 1 && comboBox4.SelectedIndex == 1)
+            {
+                gs = new GameScreen();
+                gs.Show();
+                this.Close();
+            }
+            else if(comboBox2.SelectedIndex == 1 || comboBox3.SelectedIndex == 2 || comboBox4.SelectedIndex == 2)
+            {
+                MessageBox.Show("Ainda não implementamos a IA");
+            }
+            else if(comboBox3.SelectedIndex == 0 || comboBox4.SelectedIndex == 0)
+            {
+                MessageBox.Show("Apenas o modo de 4 players está implementado");
+            }
+            else
+            {
+                MessageBox.Show("Selecione os 4 players");
+            }
         }
 
 

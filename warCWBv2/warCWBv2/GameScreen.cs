@@ -171,7 +171,7 @@ namespace warCWBv2
 
         private void picCards_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("O sistema de troca ainda não foi implementado");
+            MessageBox.Show("O sistema de trocas ainda não foi implementado");
         }
 
         private void picMap_Click(object sender, EventArgs e)
