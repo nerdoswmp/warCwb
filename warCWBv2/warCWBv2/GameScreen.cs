@@ -26,6 +26,7 @@ namespace warCWBv2
         {
             InitializeComponent();
         }
+
         private void GameScreen_Load(object sender, EventArgs e)
         {
             mapForm = new MapForm() { TopLevel = false, TopMost = true };
@@ -185,6 +186,13 @@ namespace warCWBv2
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             familia.Play();
+        }
+
+
+
+        private void GameScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(1);
         }
     }
 }
