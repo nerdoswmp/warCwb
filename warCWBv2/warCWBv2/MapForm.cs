@@ -99,7 +99,7 @@ namespace warCWBv2
                     {
                         GetCurrentPlayer().GetTeam().InsertZona(z);
                     }
-                    GetCurrentPlayer().GetTeam().UpdateToInsert();
+                    GetCurrentPlayer().GetTeam().RefreshToInsert();
 
                     foreach (var y in GetCurrentPlayer().GetTeam().GetZonas())
                     {

@@ -12,13 +12,13 @@ namespace warCWBv2
         public Color Color;
         private List<Zona> zonas = new List<Zona>();
         private List<Territorio> territorios = new List<Territorio>();
-        private int troopsToInsert = 2;
+        private int troopsToInsert = 5;
         public Team(Color color)
         {
             this.Color = color;
         }
 
-        public void UpdateToInsert()
+        public void RefreshToInsert()
         {
             troopsToInsert = 2 + zonas.Count() + (territorios.Count()/2)-2;
         }

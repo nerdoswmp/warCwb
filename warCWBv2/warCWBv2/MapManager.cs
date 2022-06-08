@@ -45,6 +45,8 @@ namespace warCWBv2
                 return null;
             if (origin.A == 255 && origin.R == 0 && origin.G == 0 && origin.B == 0 && input != 2)
                 return null;
+            if (origin.A == 255 && origin.R == 255 && origin.G == 165 && origin.B == 0 && input != 2)
+                return null;
 
             switch (input)
             {
