@@ -163,5 +163,20 @@ namespace warCWBv2
             //familia.Play();
             //player.Play();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("quer ajuda é?");
+        }
+
+        private void picCards_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("O sistema de troca ainda não foi implementado");
+        }
+
+        private void picMap_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
