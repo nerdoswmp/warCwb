@@ -434,7 +434,7 @@ namespace warCWBv2
                  FindTerritorio("centro"), FindTerritorio("rebouças")});
             // ALTO BOQUEIRÃO
             FindTerritorio("alto boqueirão").InsertTerr(new Territorio[]{ FindTerritorio("boqueirão"), FindTerritorio("xaxim"),
-                 FindTerritorio("sitio cercado"), FindTerritorio("ganchinho")});
+                 FindTerritorio("sitio cercado"), FindTerritorio("ganchinho"), FindTerritorio("uberaba")});
             // ALTO DA XV
             FindTerritorio("alto da xv").InsertTerr(new Territorio[]{ FindTerritorio("jardim botânico"), FindTerritorio("centro"),
                  FindTerritorio("tarumã"), FindTerritorio("cabral")});
@@ -533,7 +533,7 @@ namespace warCWBv2
                  FindTerritorio("sitio cercado"), FindTerritorio("umbará"), FindTerritorio("campo de santana"), FindTerritorio("são miguel")});
             // UBERABA
             FindTerritorio("uberaba").InsertTerr(new Territorio[]{ FindTerritorio("boqueirão"), FindTerritorio("xaxim"),
-                 FindTerritorio("jardim das américas"), FindTerritorio("cajuru")});
+                 FindTerritorio("jardim das américas"), FindTerritorio("cajuru"), FindTerritorio("alto boqueirão")});
             // UMBARÁ
             FindTerritorio("umbará").InsertTerr(new Territorio[]{ FindTerritorio("ganchinho"), FindTerritorio("tatuquara"),
                  FindTerritorio("campo de santana"), FindTerritorio("sitio cercado")});

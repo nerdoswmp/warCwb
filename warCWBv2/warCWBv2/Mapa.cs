@@ -19,7 +19,7 @@ namespace warCWBv2
 
         private void Mapa_Load(object sender, EventArgs e)
         {
-            var screen = Properties.Resources.warm2;
+            var screen = Properties.Resources.warm4;
             Bitmap bmp = new Bitmap(Width, Height);
             var g = Graphics.FromImage(bmp);
             g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;

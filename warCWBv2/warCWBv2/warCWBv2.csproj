@@ -189,6 +189,8 @@
     <None Include="Resources\volume.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\warm4.png" />
+    <None Include="Resources\warm3.png" />
     <None Include="Resources\warm2.png" />
     <None Include="Resources\duas-folhas-de-planta-no-outono.png" />
     <None Include="Resources\warMM.png" />

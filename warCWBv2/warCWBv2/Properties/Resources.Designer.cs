@@ -651,19 +651,9 @@ namespace warCWBv2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap warm2 {
+        internal static System.Drawing.Bitmap warm4 {
             get {
-                object obj = ResourceManager.GetObject("warm2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap warMM {
-            get {
-                object obj = ResourceManager.GetObject("warMM", resourceCulture);
+                object obj = ResourceManager.GetObject("warm4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
