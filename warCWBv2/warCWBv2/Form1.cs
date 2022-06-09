@@ -14,7 +14,7 @@ namespace warCWBv2
 {
     public partial class Form1 : Form
     {
-        SoundPlayer player = new SoundPlayer(Properties.Resources.trilha);
+        public static SoundPlayer player = new SoundPlayer(Properties.Resources.trilha);
 
         public Form1()
         {
@@ -22,7 +22,7 @@ namespace warCWBv2
             InitializeComponent();
 
         }
-        private void playGreca(int val)
+        public void playGreca(int val)
         {
             
             switch (val)
