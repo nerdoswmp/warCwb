@@ -15,6 +15,7 @@ namespace warCWBv2
     public partial class Form1 : Form
     {
         SoundPlayer player = new SoundPlayer(Properties.Resources.trilha);
+
         public Form1()
         {
             
@@ -48,6 +49,20 @@ namespace warCWBv2
             this.BackgroundImage = bmp;
             screen.Dispose();
             GC.Collect(2);
+
+
+            List<Form> openForms = new List<Form>();
+
+            foreach (Form f in Application.OpenForms)
+                openForms.Add(f);
+
+            foreach (Form f in openForms)
+            {
+                if (f.Name != "Form1")
+                    f.Close();
+            }
+
+            //solução temporária, idealmente fazer um form invisível pra ser o root sla
         }
 
         private void volume_Click(object sender, EventArgs e)
@@ -78,6 +93,11 @@ namespace warCWBv2
             Form2 form = new Form2();
             form.Show();
             this.Hide();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
     

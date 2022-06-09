@@ -23,7 +23,7 @@ namespace warCWBv2
             Bitmap bmp = new Bitmap(Width, Height);
             var g = Graphics.FromImage(bmp);
             g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
-            g.DrawImage(screen, new Rectangle(Point.Empty, this.Size));
+            g.DrawImage(screen, new Rectangle(0, 0, 720, 720));
             this.BackgroundImage = bmp;
             screen.Dispose();
             GC.Collect(2);

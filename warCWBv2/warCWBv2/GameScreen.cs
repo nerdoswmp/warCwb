@@ -192,7 +192,16 @@ namespace warCWBv2
 
         private void GameScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Environment.Exit(1);
+            List<Form> openForms = new List<Form>();
+
+            foreach (Form f in Application.OpenForms)
+                openForms.Add(f);
+
+            if (openForms.Where(x => x.Name == "Form1").Last().Visible == false)
+            {
+                Environment.Exit(0);
+            }
+
         }
     }
 }

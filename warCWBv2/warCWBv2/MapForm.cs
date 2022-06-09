@@ -17,9 +17,9 @@ namespace warCWBv2
     public partial class MapForm : Form
     {
         static List<Territorio> territorioList = new List<Territorio>();
-        static string selected = "";
-        static string tmp = "";
-        static int step = 0;
+        string selected = "";
+        string tmp = "";
+        int step = 0;
         Label[] labels = new Label[38];
         Random rand = new Random(Guid.NewGuid().GetHashCode());
         Graphics g;
@@ -111,7 +111,7 @@ namespace warCWBv2
                         MessageBox.Show($"Player {GetCurrentPlayer().GetTeam().GetColor().Name} wins");
                         vitoria form = new vitoria();
                         form.Show();
-                        this.Hide();
+                        gs.Hide();
                     }
 
                 }
@@ -299,9 +299,9 @@ namespace warCWBv2
                                 UpdateTroopLabels();
                                 mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), selectedobj.GetCoord(), 1);
                                 mm.Close();
-                                GetCurrentPlayer().NextAct();
+                                //GetCurrentPlayer().NextAct();
                                 step = 0;
-                                NextPlayer();
+                                //NextPlayer();
                                 gs.UpdateTurn();
                             }
                         }

@@ -23,9 +23,11 @@ namespace warCWBv2
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             SoundPlayer.Stop();
+            Form1 form = new Form1();
+            form.Show();
             this.Close();
-            Form1 form1 = new Form1();
-            form1.Show();
+
+            // o jogo inteiro buga depois da primeira vitória btw
         }
     }
 }
