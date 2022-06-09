@@ -40,13 +40,13 @@
             this.picMap = new System.Windows.Forms.PictureBox();
             this.picCards = new System.Windows.Forms.PictureBox();
             this.picHelp = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.settingsPic = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCards)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHelp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.settingsPic)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -172,15 +172,17 @@
             this.picHelp.TabStop = false;
             this.picHelp.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // pictureBox1
+            // settingsPic
             // 
-            this.pictureBox1.BackgroundImage = global::warCWBv2.Properties.Resources.settings;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 660);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 46);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.settingsPic.BackgroundImage = global::warCWBv2.Properties.Resources.settings;
+            this.settingsPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.settingsPic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.settingsPic.Location = new System.Drawing.Point(12, 664);
+            this.settingsPic.Name = "settingsPic";
+            this.settingsPic.Size = new System.Drawing.Size(45, 43);
+            this.settingsPic.TabIndex = 10;
+            this.settingsPic.TabStop = false;
+            this.settingsPic.Click += new System.EventHandler(this.settingsPic_Click);
             // 
             // GameScreen
             // 
@@ -188,7 +190,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(720, 719);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.settingsPic);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.bt_Objective);
             this.Controls.Add(this.picMap);
@@ -212,7 +214,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCards)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHelp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.settingsPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,6 +232,6 @@
         private System.Windows.Forms.PictureBox picCards;
         private System.Windows.Forms.PictureBox picMap;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox settingsPic;
     }
 }

@@ -203,5 +203,10 @@ namespace warCWBv2
             }
 
         }
+
+        private void settingsPic_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
