@@ -22,6 +22,7 @@ namespace warCWBv2
             InitializeComponent();
 
         }
+
         private void playGreca(int val)
         {
             

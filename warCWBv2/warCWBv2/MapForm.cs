@@ -26,6 +26,7 @@ namespace warCWBv2
         List<Zona> zonas = GetZonas();
         GameScreen gs = PreOff.gs;
         MapManager mm = new MapManager();
+
         public MapForm()
         {
             InitializeComponent();
@@ -42,8 +43,6 @@ namespace warCWBv2
             CreateTerritorio();
             Timer tm = new Timer();
             tm.Interval = 60;
-
-            
 
             for (int i = 0; i < GetTerritorios().Count(); i++)
             {
@@ -72,9 +71,9 @@ namespace warCWBv2
             int turn0 = 0;
 
 
+
             foreach(var l in labels)
             {
-                string ogtxt = l.Text;
                 Point ogpos = l.Location;
 
                 l.MouseEnter += (o, mea) =>
@@ -85,7 +84,7 @@ namespace warCWBv2
 
                 l.MouseLeave += (o, mea) =>
                 {
-                    l.Text = ogtxt;
+                    l.Text = FindTerritorio(l.Name).GetTroops().ToString();
                     l.Location = ogpos;
                 };
             }
