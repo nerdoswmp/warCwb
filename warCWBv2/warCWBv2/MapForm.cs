@@ -70,6 +70,29 @@ namespace warCWBv2
             mm.Close();
 
             int turn0 = 0;
+
+
+            foreach(var l in labels)
+            {
+                string ogtxt = l.Text;
+                Point ogpos = l.Location;
+
+                l.MouseEnter += (o, mea) =>
+                {
+                    l.Text = l.Name.ToString();
+                    l.Location = new Point(ogpos.X - (l.Size.Width/3), ogpos.Y);
+                };
+
+                l.MouseLeave += (o, mea) =>
+                {
+                    l.Text = ogtxt;
+                    l.Location = ogpos;
+                };
+            }
+
+            
+
+
             pb.MouseDown += (o, mea) =>
             {
                 //Console.WriteLine((int)GetCurrentPlayer().GetAction());
