@@ -206,7 +206,8 @@ namespace warCWBv2
 
         private void settingsPic_Click(object sender, EventArgs e)
         {
-
+            Config config = new Config();
+            config.Show();
         }
     }
 }
