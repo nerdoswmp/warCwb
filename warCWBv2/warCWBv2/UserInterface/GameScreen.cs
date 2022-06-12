@@ -21,11 +21,17 @@ namespace warCWBv2
         SoundPlayer player = new SoundPlayer(Properties.Resources.trilha);
         SoundPlayer familia = new SoundPlayer(Properties.Resources.A_Família_Folhas_voltou___);
         MapForm mapForm;
+        Random rand = new Random(Guid.NewGuid().GetHashCode());
+        bool hardmode = false;
 
         public GameScreen(int amount)
         {
             teams = CreateTeams(amount);
             players = CreatePlayers(amount);
+            if (amount == 10)
+            {
+                hardmode = true;
+            }
             InitializeComponent();
         }
 
@@ -64,7 +70,14 @@ namespace warCWBv2
                     label2.Text = $"Colocar Tropas ({GetCurrentPlayer().GetTeam().GetTroopsToInsert()})";
                     break;
                 case 1:
-                    label2.Text = "Atacar";
+                    if (hardmode)
+                    {
+                        label2.Text = "Pavimentar";
+                    }
+                    else
+                    {
+                        label2.Text = "Atacar";
+                    }
                     break;
                 case 2:
                     label2.Text = "Mover Tropas";
@@ -74,6 +87,7 @@ namespace warCWBv2
                     break;
             }
             this.BackColor = GetCurrentPlayer().GetTeam().GetColor();
+            Console.WriteLine(GetCurrentPlayer().GetTeam().GetColor());
         }
 
         public void UpdateTurn()
@@ -87,6 +101,7 @@ namespace warCWBv2
 
         public static void NextPlayer()
         {
+            Console.WriteLine($"{teams.Length} | {current}");
             if (current >= teams.Length-1)
             {
                 current = 0;
@@ -113,6 +128,16 @@ namespace warCWBv2
             Team team2 = new Team(Color.Yellow);
             Team team3 = new Team(Color.Green);
             Team team4 = new Team(Color.Blue);
+            Team team5 = new Team(Color.Cyan);
+            Team team6 = new Team(Color.Purple);
+            Team team7 = new Team(Color.Magenta);
+            Team team8 = new Team(Color.Gray);
+            Team team9 = new Team(Color.Teal);
+            Team team10 = new Team(Color.Fuchsia);
+            Team team11 = new Team(Color.Silver);
+            Team team12 = new Team(Color.Lime);
+            Team team13 = new Team(Color.Navy);
+
 
             //Team team1 = new Team(ColorTranslator.FromHtml("#0EAD69"));
             //Team team2 = new Team(ColorTranslator.FromHtml("#3BCEAC"));
@@ -133,6 +158,12 @@ namespace warCWBv2
                     return new Team[] { team1, team2, team3 };
                 case 7:
                     return new Team[] { team1, team2, team3, team4 };
+                case 8:
+                    return new Team[] { team1, team2, team3, team4 };
+                case 9:
+                    return new Team[] { team1, team2, team3, team4 };
+                case 10:
+                    return new Team[] { team1, team2, team3, team4, team5, team6, team7, team8, team9, team10, team11, team12, team13 };
                 default:
                     return new Team[] { team1, team2, team3, team4 };
             }
@@ -140,11 +171,21 @@ namespace warCWBv2
 
         public Player[] CreatePlayers(int amount)
         {
-            Random rand = new Random(Guid.NewGuid().GetHashCode());
+            
             Player p1;
             Player p2;
             Player p3;
             Player p4;
+            Player p5;
+            Player p6;
+            Player p7;
+            Player p8;
+            Player p9;
+            Player p10;
+            Player p11;
+            Player p12;
+            Player p13;
+
 
             switch (amount)
             {
@@ -178,6 +219,33 @@ namespace warCWBv2
                     p3 = new ArtificialPlayer(teams[2], rand.Next(0, 5), mapForm);
                     p4 = new ArtificialPlayer(teams[3], rand.Next(0, 5), mapForm);
                     return new Player[] { p1, p2, p3, p4 };
+                case 8:
+                    p1 = new Player(teams[0], rand.Next(0, 5));
+                    p2 = new Player(teams[1], rand.Next(0, 5));
+                    p3 = new ArtificialPlayer(teams[2], rand.Next(0, 5), mapForm);
+                    p4 = new ArtificialPlayer(teams[3], rand.Next(0, 5), mapForm);
+                    return new Player[] { p1, p2, p3, p4 };
+                case 9:
+                    p1 = new Player(teams[0], rand.Next(0, 5));
+                    p2 = new Player(teams[1], rand.Next(0, 5));
+                    p3 = new Player(teams[2], rand.Next(0, 5));
+                    p4 = new ArtificialPlayer(teams[3], rand.Next(0, 5), mapForm);
+                    return new Player[] { p1, p2, p3, p4 };
+                case 10:
+                    p1 = new Player(teams[0], 5);
+                    p2 = new ArtificialPlayer(teams[1], 5, mapForm);
+                    p3 = new ArtificialPlayer(teams[2], 5, mapForm);
+                    p4 = new ArtificialPlayer(teams[3], 5, mapForm);
+                    p5 = new ArtificialPlayer(teams[4], 5, mapForm);
+                    p6 = new ArtificialPlayer(teams[5], 5, mapForm);
+                    p7 = new ArtificialPlayer(teams[6], 5, mapForm);
+                    p8 = new ArtificialPlayer(teams[7], 5, mapForm);
+                    p9 = new ArtificialPlayer(teams[8], 5, mapForm);
+                    p10 = new ArtificialPlayer(teams[9], 5, mapForm);
+                    p11 = new ArtificialPlayer(teams[10], 5, mapForm);
+                    p12 = new ArtificialPlayer(teams[11], 5, mapForm);
+                    p13 = new ArtificialPlayer(teams[12], 5, mapForm);
+                    return new Player[] { p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13 };
                 default:
                     p1 = new Player(teams[0], rand.Next(0, 5));
                     p2 = new Player(teams[1], rand.Next(0, 5));
@@ -245,6 +313,9 @@ namespace warCWBv2
                     break;
                 case 4:
                     text = "Conquistar CIC, BAIRRO NOVO e BOA VISTA";
+                    break;
+                case 5:
+                    text = "ASFALTAR CURITIBA (TODOS TERRITÓRIOS)";
                     break;
             }
 

@@ -73,6 +73,24 @@ namespace warCWBv2
                 gs.Show();
                 this.Close();
             }
+            else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 0 && comboBox3.SelectedIndex == 2 && comboBox4.SelectedIndex == 2)
+            {
+                gs = new GameScreen(8);
+                gs.Show();
+                this.Close();
+            }
+            else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 0 && comboBox3.SelectedIndex == 1 && comboBox4.SelectedIndex == 2)
+            {
+                gs = new GameScreen(9);
+                gs.Show();
+                this.Close();
+            }
+            else if (tb_Codigo.Text == "grecalover")
+            {
+                gs = new GameScreen(10);
+                gs.Show();
+                this.Close();
+            }
             else
             {
                 MessageBox.Show("Selecione os 4 players");

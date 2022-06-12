@@ -34,6 +34,8 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.tb_Codigo = new System.Windows.Forms.TextBox();
+            this.lb_Codigo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,12 +99,30 @@
             this.comboBox4.Size = new System.Drawing.Size(193, 28);
             this.comboBox4.TabIndex = 5;
             // 
+            // tb_Codigo
+            // 
+            this.tb_Codigo.Location = new System.Drawing.Point(608, 688);
+            this.tb_Codigo.Name = "tb_Codigo";
+            this.tb_Codigo.Size = new System.Drawing.Size(100, 20);
+            this.tb_Codigo.TabIndex = 6;
+            // 
+            // lb_Codigo
+            // 
+            this.lb_Codigo.AutoSize = true;
+            this.lb_Codigo.Location = new System.Drawing.Point(605, 672);
+            this.lb_Codigo.Name = "lb_Codigo";
+            this.lb_Codigo.Size = new System.Drawing.Size(40, 13);
+            this.lb_Codigo.TabIndex = 7;
+            this.lb_Codigo.Text = "Código";
+            // 
             // PreOff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(720, 720);
+            this.Controls.Add(this.lb_Codigo);
+            this.Controls.Add(this.tb_Codigo);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
@@ -117,6 +137,7 @@
             this.Load += new System.EventHandler(this.PreOff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,5 +147,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TextBox tb_Codigo;
+        private System.Windows.Forms.Label lb_Codigo;
     }
 }
