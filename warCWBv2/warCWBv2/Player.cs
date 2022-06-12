@@ -116,20 +116,35 @@ namespace warCWBv2
                         win = true;
                     }
                     break;
-                //case 5:
-                //    switch (GetAllPlayers().Length)
-                //    {
-                //        case 2:
-                //            if (!GetAllPlayers().Where(x => x.GetTeam() != this.team).First().IsAlive())
-                //            {
-                //                win = true;
-                //            }
-                //            break;
-                        
-                //            // é necessário fazer uma condição pra cada player em cada quantidade de jogadores onde
-                //            // o inimigo a ser morto não pode ser você, e visto que você tem que mostrar isso numa 
-                //            // messagebox.. fica meio complicado
-                //    }
+                case 5:
+                    foreach (var z in team.GetZonas())
+                    {
+                        if (z.GetName() == "CIC" || z.GetName() == "BOA VISTA" || z.GetName() == "BAIRRO NOVO" || z.GetName() == "MATRIZ" ||
+                             z.GetName() == "PORTÃO" || z.GetName() == "CAJURU" || z.GetName() == "BOQUEIRÃO" || z.GetName() == "PINHEIRINHO" ||
+                              z.GetName() == "SANTA FELICIDADE")
+                        {
+                            tmp++;
+                        }
+                    }
+                    if (tmp == 9)
+                    {
+                        win = true;
+                    }
+                    break;
+                    //case 5:
+                    //    switch (GetAllPlayers().Length)
+                    //    {
+                    //        case 2:
+                    //            if (!GetAllPlayers().Where(x => x.GetTeam() != this.team).First().IsAlive())
+                    //            {
+                    //                win = true;
+                    //            }
+                    //            break;
+
+                    //            // é necessário fazer uma condição pra cada player em cada quantidade de jogadores onde
+                    //            // o inimigo a ser morto não pode ser você, e visto que você tem que mostrar isso numa 
+                    //            // messagebox.. fica meio complicado
+                    //    }
             }
 
             return win;

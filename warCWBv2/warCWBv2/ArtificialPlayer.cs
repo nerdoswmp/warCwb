@@ -52,6 +52,13 @@ namespace warCWBv2
                     objzonas = GetZonas().Where(x => x.GetName() == "CIC" || x.GetName() == "BAIRRO NOVO"
                     || x.GetName() == "BOA VISTA").ToArray();
                     break;
+                case 5:
+                    //"tudo nosso nada deles"
+                    objzonas = GetZonas().Where(x => x.GetName() == "CIC" || x.GetName() == "BAIRRO NOVO"
+                    || x.GetName() == "BOA VISTA" || x.GetName() == "PINNHEIRINHO" || x.GetName() == "PORTÃO"
+                    || x.GetName() == "SANTA FELICIDADE" || x.GetName() == "BOQUEIRÃO" || x.GetName() == "CAJURU"
+                    || x.GetName() == "MATRIZ").ToArray();
+                    break;
             }
         }
 
@@ -67,11 +74,19 @@ namespace warCWBv2
         }
         public Point Play(int act)
         {
-            bool hasterr = CreateZonas().Any();
+            bool hasterr = GetZonas().Any();
             Random rand = new Random();
             if (GetCurrentPlayer() == this)
             {
-                Point place = team.GetTerritorios()[rand.Next(0, team.GetTerritorios().Count())].GetCoord();
+                Point place;
+                if (team.GetTerritorios().Count() > 0 )
+                {
+                    place = team.GetTerritorios()[rand.Next(0, team.GetTerritorios().Count())].GetCoord();
+                }
+                else
+                {
+                    place = new Point();
+                }
                 switch (act)
                 {
                     case 0:

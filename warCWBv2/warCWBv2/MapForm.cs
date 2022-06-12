@@ -104,10 +104,10 @@ namespace warCWBv2
                             gs.UpdateLabels();
                             break;
                         case 2:
-                            for (int i = 0; i < 2; i++)
+                            for (int i = 0; i < rand.Next(1, 4); i++)
                             {
                                 MoveTurn(mm, a1.Play(0));
-                                for (int j = 0; j < rand.Next(2, 4); j++)
+                                for (int j = 0; j < rand.Next(1, 4); j++)
                                 {
                                     MoveTurn(mm, a1.Play(2));
                                 }
