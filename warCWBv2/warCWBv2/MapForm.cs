@@ -20,12 +20,13 @@ namespace warCWBv2
         string selected = "";
         string tmp = "";
         int step = 0;
+        int turn0 = 0;
         Label[] labels = new Label[38];
         Random rand = new Random(Guid.NewGuid().GetHashCode());
         Graphics g;
-        List<Zona> zonas = GetZonas();
+        static List<Zona> zonas = CreateZonas();
         GameScreen gs = PreOff.gs;
-        MapManager mm = new MapManager();
+        public MapManager mm = new MapManager();
 
         public MapForm()
         {
@@ -42,7 +43,9 @@ namespace warCWBv2
 
             CreateTerritorio();
             Timer tm = new Timer();
+            Timer stm = new Timer();
             tm.Interval = 60;
+            stm.Interval = 100;
 
             for (int i = 0; i < GetTerritorios().Count(); i++)
             {
@@ -64,13 +67,70 @@ namespace warCWBv2
             };
             tm.Start();
 
+            stm.Tick += delegate
+            {
+                if (GetCurrentPlayer().GetType().ToString() == "warCWBv2.ArtificialPlayer")
+                {
+                    gs.DisableSkip();
+                    ArtificialPlayer a1 = (ArtificialPlayer)GetCurrentPlayer();
+                    switch ((int)GetCurrentPlayer().GetAction())
+                    {
+                        case 0:
+                            //Console.WriteLine(a1.Play());
+                            InsertTurn(mm, a1.Play(0));
+
+                            if (turn0 < teams.Length)
+                            {
+                                NextPlayer();
+                                turn0++;
+                            }
+
+                            gs.UpdateLabels();
+                            //MessageBox.Show(GetCurrentPlayer().ToString());
+                            break;
+
+                        case 1:
+                            for (int i = 0; i < rand.Next(2, 6); i++)
+                            {
+                                AttackTurn(mm, a1.Play(0));
+                                for (int j = 0; j < rand.Next(2,15); j++)
+                                {
+                                    AttackTurn(mm, a1.Play(1));
+                                }
+                                ResetVars();
+                            }
+                            
+                            GetCurrentPlayer().NextAct();
+                            gs.UpdateLabels();
+                            break;
+                        case 2:
+                            for (int i = 0; i < 2; i++)
+                            {
+                                MoveTurn(mm, a1.Play(0));
+                                for (int j = 0; j < rand.Next(2, 4); j++)
+                                {
+                                    MoveTurn(mm, a1.Play(2));
+                                }
+                                ResetVars();
+                            }
+
+                            GetCurrentPlayer().NextAct();
+                            gs.UpdateLabels();
+                            break;
+                        case 3:
+                            NextPlayer();
+                            gs.UpdateLabels();
+                            break;
+                    }
+
+                    EndTurnValidate();
+                }
+            };
+            stm.Start();
+
             mm.Initialize();
             mm.ClearRandom(territorioList);
             mm.Close();
-
-            int turn0 = 0;
-
-
 
             foreach(var l in labels)
             {
@@ -89,70 +149,74 @@ namespace warCWBv2
                 };
             }
 
-            
-
-
             pb.MouseDown += (o, mea) =>
             {
                 //Console.WriteLine((int)GetCurrentPlayer().GetAction());
                 //Console.WriteLine(turn0);
 
-                if (turn0 >= 4)
+                Console.WriteLine(mea.Location);
+
+                if (turn0 >= teams.Length)
                 {
                     gs.EnableSkip();
                     switch ((int)GetCurrentPlayer().GetAction())
                     {
                         case 0:
-                            InsertTurn(mm, mea);       
+                            InsertTurn(mm, mea.Location);       
                             break;
                         case 1:
-                            AttackTurn(mm, mea);
+                            AttackTurn(mm, mea.Location);
                             break;
                         case 2:
-                            MoveTurn(mm, mea);
+                            MoveTurn(mm, mea.Location);
                             break;
                         case 3:
                             NextPlayer();
                             gs.UpdateLabels();
                             break;
                     };
-
-                    foreach (var z in zonas)
-                    {
-                        GetCurrentPlayer().GetTeam().InsertZona(z);
-                    }
-                    GetCurrentPlayer().GetTeam().RefreshToInsert();
-
-                    foreach (var y in GetCurrentPlayer().GetTeam().GetZonas())
-                    {
-                        Console.Write($"{y.GetName()} | ");
-                    }
-
-                    if (GetCurrentPlayer().ValidateObjective())
-                    {
-                        MessageBox.Show($"Player {GetCurrentPlayer().GetTeam().GetColor().Name} wins");
-                        vitoria form = new vitoria();
-                        form.Show();
-                        gs.Hide();
-                    }
-
+                    EndTurnValidate();
                 }
                 else
                 {
-                    if (InsertTurn(mm, mea))
+                    if (InsertTurn(mm, mea.Location))
                     {
                         NextPlayer();
                         turn0++;
                     }
+
                     gs.UpdateLabels();
                 }
+
+                
             };
         }
 
-        public bool InsertTurn(MapManager mm, MouseEventArgs mea)
+        public void EndTurnValidate()
+        {
+            foreach (var z in zonas)
+            {
+                GetCurrentPlayer().GetTeam().InsertZona(z);
+            }
+            GetCurrentPlayer().GetTeam().RefreshToInsert();
+
+            foreach (var y in GetCurrentPlayer().GetTeam().GetZonas())
+            {
+                Console.Write($"{y.GetName()} | ");
+            }
+
+            if (GetCurrentPlayer().ValidateObjective())
+            {
+                MessageBox.Show($"Player {GetCurrentPlayer().GetTeam().GetColor().Name} wins");
+                vitoria form = new vitoria();
+                form.Show();
+                gs.Hide();
+            }
+        }
+        public bool InsertTurn(MapManager mm, Point coord)
         {
             mm.Initialize();
-            string tname = mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), mea.Location, 2);
+            string tname = mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), coord, 2);
             if (tname != null)
             {
                 var terr = FindTerritorio(tname);
@@ -175,16 +239,16 @@ namespace warCWBv2
             tmp = tname;       
             return false;
         }
-        public void AttackTurn(MapManager mm, MouseEventArgs mea)
+        public void AttackTurn(MapManager mm, Point coord)
         {
             //Console.WriteLine(mea.Location.ToString());
             if (step == 0)
             {
                 mm.Initialize();
-                string tname = mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), mea.Location, 2);
+                string tname = mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), coord, 2);
                 if (tname != null && FindTerritorio(tname).GetTroops() > 1)
                 {
-                    selected = mm.Clear(Color.Orange, mea.Location, 1);
+                    selected = mm.Clear(Color.Orange, coord, 1);
                     //Console.WriteLine("step 1");
                     step = 1;
                 }
@@ -198,7 +262,7 @@ namespace warCWBv2
             else
             {
                 mm.Initialize();
-                string name = mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), mea.Location, 1);
+                string name = mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), coord, 1);
                 mm.Close();
                 int found = -1;
                 if (name != null)
@@ -271,7 +335,7 @@ namespace warCWBv2
                     {
                         mm.Initialize();
                         mm.Clear(GetAllTeams().Where(x => x.GetTerritorios().Contains(territorio))
-                                .Single().GetColor(), mea.Location, 1);
+                                .Single().GetColor(), coord, 1);
                         gs.UpdateLabels();
                         mm.Close();
                     }
@@ -279,16 +343,16 @@ namespace warCWBv2
             }
             gs.UpdateLabels();
         }
-        public void MoveTurn(MapManager mm, MouseEventArgs mea)
+        public void MoveTurn(MapManager mm, Point coord)
         {
             //Console.WriteLine(step);
             if (step == 0)
             {
                 mm.Initialize();
-                string tname = mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), mea.Location, 2);
+                string tname = mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), coord, 2);
                 if (tname != null && FindTerritorio(tname).GetTroops() > 1)
                 {
-                    selected = mm.Clear(Color.Orange, mea.Location, 1);
+                    selected = mm.Clear(Color.Orange, coord, 1);
                     //Console.WriteLine("step 1");
                     step = 1;
                 }
@@ -303,7 +367,7 @@ namespace warCWBv2
                 if (selected != null)
                 {
                     mm.Initialize();
-                    string moveto = mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), mea.Location, 2);
+                    string moveto = mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), coord, 2);
                     mm.Close();
                     //Console.WriteLine("step 2");
                     if (moveto != null)
@@ -340,7 +404,7 @@ namespace warCWBv2
             }
             gs.UpdateLabels();
         }
-        public static List<Zona> GetZonas()
+        public static List<Zona> CreateZonas()
         {
             List<Zona> list = new List<Zona>();
             Zona cic = new Zona(3, "CIC");
@@ -356,6 +420,10 @@ namespace warCWBv2
             list.AddRange(new[] { cic, portao, bairronovo, pinheirinho, stafelicidade, boqueirao, cajuru, matriz, boavista });
 
             return list;
+        }
+
+        public static List<Zona> GetZonas(){
+            return zonas;
         }
 
         public void CreateTerritorio()
@@ -590,7 +658,6 @@ namespace warCWBv2
                 l.Text = FindTerritorio(l.Name).GetTroops().ToString();
             }
         }
-
         public void ResetVars()
         {
             step = 0;

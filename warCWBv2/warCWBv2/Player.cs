@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static warCWBv2.GameScreen;
 
 namespace warCWBv2
 {
@@ -11,6 +12,7 @@ namespace warCWBv2
         private int objective;
         TurnAction action;
         Team team;
+        bool playing = true;
 
         public Player(Team team, int obj)
         {
@@ -114,10 +116,33 @@ namespace warCWBv2
                         win = true;
                     }
                     break;
-
+                //case 5:
+                //    switch (GetAllPlayers().Length)
+                //    {
+                //        case 2:
+                //            if (!GetAllPlayers().Where(x => x.GetTeam() != this.team).First().IsAlive())
+                //            {
+                //                win = true;
+                //            }
+                //            break;
+                        
+                //            // é necessário fazer uma condição pra cada player em cada quantidade de jogadores onde
+                //            // o inimigo a ser morto não pode ser você, e visto que você tem que mostrar isso numa 
+                //            // messagebox.. fica meio complicado
+                //    }
             }
 
             return win;
+        }
+
+        public void PlayerDie()
+        {
+            playing = false;
+        }
+
+        public bool IsAlive()
+        {
+            return playing;
         }
     }
 
