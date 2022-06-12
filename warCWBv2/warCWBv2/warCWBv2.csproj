@@ -12,7 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\murilo\Documents\build\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,10 +23,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -52,7 +53,19 @@
     </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Conceitual.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Conceitual.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>CBDA9D6818D234819C8813A942B2723D014B189F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>warCWBv2_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -68,40 +81,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="ArtificialPlayer.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="UserInterface\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="UserInterface\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
+    <Compile Include="UserInterface\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Config.cs">
+    <Compile Include="UserInterface\Config.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Config.Designer.cs">
+    <Compile Include="UserInterface\Config.Designer.cs">
       <DependentUpon>Config.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mapa.cs">
+    <Compile Include="UserInterface\Mapa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mapa.Designer.cs">
+    <Compile Include="UserInterface\Mapa.Designer.cs">
       <DependentUpon>Mapa.cs</DependentUpon>
     </Compile>
-    <Compile Include="vitoria.cs">
+    <Compile Include="UserInterface\vitoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vitoria.Designer.cs">
+    <Compile Include="UserInterface\vitoria.Designer.cs">
       <DependentUpon>vitoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameScreen.cs">
+    <Compile Include="UserInterface\GameScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameScreen.Designer.cs">
+    <Compile Include="UserInterface\GameScreen.Designer.cs">
       <DependentUpon>GameScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="MapForm.cs">
@@ -112,41 +131,36 @@
     </Compile>
     <Compile Include="MapManager.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="PreOff.cs">
+    <Compile Include="UserInterface\PreOff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PreOff.Designer.cs">
+    <Compile Include="UserInterface\PreOff.Designer.cs">
       <DependentUpon>PreOff.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Team.cs" />
     <Compile Include="Territorio.cs" />
     <Compile Include="Zona.cs" />
-    <EmbeddedResource Include="Config.resx">
+    <EmbeddedResource Include="UserInterface\Config.resx">
       <DependentUpon>Config.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="UserInterface\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
+    <EmbeddedResource Include="UserInterface\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mapa.resx">
+    <EmbeddedResource Include="UserInterface\Mapa.resx">
       <DependentUpon>Mapa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GameScreen.resx">
+    <EmbeddedResource Include="UserInterface\GameScreen.resx">
       <DependentUpon>GameScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MapForm.resx">
       <DependentUpon>MapForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PreOff.resx">
+    <EmbeddedResource Include="UserInterface\PreOff.resx">
       <DependentUpon>PreOff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -154,7 +168,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="vitoria.resx">
+    <EmbeddedResource Include="UserInterface\vitoria.resx">
       <DependentUpon>vitoria.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -166,6 +180,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="warCWBv2_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -218,10 +233,10 @@
     <None Include="Resources\login2.png" />
     <None Include="Resources\login.png" />
     <None Include="Resources\assets_mapa\1mapa cwb outline.png" />
-    <None Include="fullmap.bmp" />
-    <None Include="mapfull.bmp" />
+    <None Include="Resources\fullmap.bmp" />
+    <None Include="Resources\mapfull.bmp" />
     <None Include="Resources\A-Família-Folhas-voltou_-_.wav" />
-    <Content Include="Conceitual.ico" />
+    <Content Include="Resources\Conceitual.ico" />
     <Content Include="Resources\assets_mapa\AGUA VERDE.png" />
     <Content Include="Resources\assets_mapa\ALTO BOQUEIRAO.png" />
     <Content Include="Resources\assets_mapa\ALTO DA XV.png" />
@@ -241,7 +256,6 @@
     <Content Include="Resources\assets_mapa\GANCHINHO.png" />
     <Content Include="Resources\assets_mapa\JARDIM BOTANICO.png" />
     <Content Include="Resources\assets_mapa\JARDIM DAS AMERICAS.png" />
-    <Content Include="Resources\assets_mapa\mapa cwb outline.png" />
     <Content Include="Resources\assets_mapa\MERCES.png" />
     <Content Include="Resources\assets_mapa\NOVO MUNDO.png" />
     <Content Include="Resources\assets_mapa\ORLEANS.png" />

@@ -34,17 +34,44 @@ namespace warCWBv2
         {
             if(comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 0 && comboBox3.SelectedIndex == 1 && comboBox4.SelectedIndex == 1)
             {
-                gs = new GameScreen();
+                gs = new GameScreen(4);
                 gs.Show();
                 this.Close();
             }
-            else if(comboBox2.SelectedIndex == 1 || comboBox3.SelectedIndex == 2 || comboBox4.SelectedIndex == 2)
+
+            else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 0 && comboBox3.SelectedIndex == 0 && comboBox4.SelectedIndex == 0)
             {
-                MessageBox.Show("Ainda não implementamos a IA");
+                gs = new GameScreen(2);
+                gs.Show();
+                this.Close();
             }
-            else if(comboBox3.SelectedIndex == 0 || comboBox4.SelectedIndex == 0)
+
+            else if(comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 0 && comboBox3.SelectedIndex == 1 && comboBox4.SelectedIndex == 0)
             {
-                MessageBox.Show("Apenas o modo de 4 players está implementado");
+                gs = new GameScreen(3);
+                gs.Show();
+                this.Close();
+            }
+
+            else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 1 && comboBox3.SelectedIndex == 0 && comboBox4.SelectedIndex == 0)
+            {
+                gs = new GameScreen(5);
+                gs.Show();
+                this.Close();
+            }
+
+            else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 1 && comboBox3.SelectedIndex == 2 && comboBox4.SelectedIndex == 0)
+            {
+                gs = new GameScreen(6);
+                gs.Show();
+                this.Close();
+            }
+
+            else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 1 && comboBox3.SelectedIndex == 2 && comboBox4.SelectedIndex == 2)
+            {
+                gs = new GameScreen(7);
+                gs.Show();
+                this.Close();
             }
             else
             {

@@ -136,17 +136,16 @@ namespace warCWBv2
         public void ClearRandom(List<Territorio> territorios)
         {
             Team[] teams = GetAllTeams();
-            int i = rand.Next(0,4);
+            int i = rand.Next(0,teams.Length+1);
             territorios = territorios.OrderBy(a => rand.Next()).ToList();
             foreach (var ter in territorios)
             {
-                if (i >= 4)
+                if (i >= teams.Length)
                 {
                     i = 0;
                 }
                 teams[i].InsertTerr(ter);
                 Clear(teams[i++].GetColor(), ter.GetCoord(), 0);
-                
             }
         }
 

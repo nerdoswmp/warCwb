@@ -27,6 +27,7 @@ namespace warCWBv2
             this.coord = coord;
             this.name = name.ToLower().Replace("_", "");
         }
+        public Territorio() { }
 
         public void InsertTerr(Territorio[] territorios)
         {
