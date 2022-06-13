@@ -119,6 +119,32 @@ namespace warCWBv2
                 case 5:
                     foreach (var z in team.GetZonas())
                     {
+                        if (z.GetName() == "BOQUEIRÃO" || z.GetName() == "CAJURU" || z.GetName() == "SANTA FELICIDADE")
+                        {
+                            tmp++;
+                        }
+                    }
+                    if (tmp == 3)
+                    {
+                        win = true;
+                    }
+                    break;
+                case 6:
+                    foreach (var z in team.GetZonas())
+                    {
+                        if (z.GetName() == "CIC" || z.GetName() == "MATRIZ" || z.GetName() == "BOQUEIRÃO")
+                        {
+                            tmp++;
+                        }
+                    }
+                    if (tmp == 3)
+                    {
+                        win = true;
+                    }
+                    break;
+                case 99:
+                    foreach (var z in team.GetZonas())
+                    {
                         if (z.GetName() == "CIC" || z.GetName() == "BOA VISTA" || z.GetName() == "BAIRRO NOVO" || z.GetName() == "MATRIZ" ||
                              z.GetName() == "PORTÃO" || z.GetName() == "CAJURU" || z.GetName() == "BOQUEIRÃO" || z.GetName() == "PINHEIRINHO" ||
                               z.GetName() == "SANTA FELICIDADE")

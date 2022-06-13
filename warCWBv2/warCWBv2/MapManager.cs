@@ -15,6 +15,7 @@ namespace warCWBv2
     {
         private int channels = 4;
         public Bitmap Map { get; private set; } = Properties.Resources.mapfull;
+        public Bitmap boom { get; private set; } = Properties.Resources.boom;
         private byte[] bytes = null;
         private int stride = 0;
         private BitmapData data = null;

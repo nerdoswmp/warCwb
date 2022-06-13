@@ -87,7 +87,6 @@ namespace warCWBv2
                     break;
             }
             this.BackColor = GetCurrentPlayer().GetTeam().GetColor();
-            Console.WriteLine(GetCurrentPlayer().GetTeam().GetColor());
         }
 
         public void UpdateTurn()
@@ -232,19 +231,19 @@ namespace warCWBv2
                     p4 = new ArtificialPlayer(teams[3], rand.Next(0, 5), mapForm);
                     return new Player[] { p1, p2, p3, p4 };
                 case 10:
-                    p1 = new Player(teams[0], 5);
-                    p2 = new ArtificialPlayer(teams[1], 5, mapForm);
-                    p3 = new ArtificialPlayer(teams[2], 5, mapForm);
-                    p4 = new ArtificialPlayer(teams[3], 5, mapForm);
-                    p5 = new ArtificialPlayer(teams[4], 5, mapForm);
-                    p6 = new ArtificialPlayer(teams[5], 5, mapForm);
-                    p7 = new ArtificialPlayer(teams[6], 5, mapForm);
-                    p8 = new ArtificialPlayer(teams[7], 5, mapForm);
-                    p9 = new ArtificialPlayer(teams[8], 5, mapForm);
-                    p10 = new ArtificialPlayer(teams[9], 5, mapForm);
-                    p11 = new ArtificialPlayer(teams[10], 5, mapForm);
-                    p12 = new ArtificialPlayer(teams[11], 5, mapForm);
-                    p13 = new ArtificialPlayer(teams[12], 5, mapForm);
+                    p1 = new Player(teams[0], 99);
+                    p2 = new ArtificialPlayer(teams[1], 99, mapForm);
+                    p3 = new ArtificialPlayer(teams[2], 99, mapForm);
+                    p4 = new ArtificialPlayer(teams[3], 99, mapForm);
+                    p5 = new ArtificialPlayer(teams[4], 99, mapForm);
+                    p6 = new ArtificialPlayer(teams[5], 99, mapForm);
+                    p7 = new ArtificialPlayer(teams[6], 99, mapForm);
+                    p8 = new ArtificialPlayer(teams[7], 99, mapForm);
+                    p9 = new ArtificialPlayer(teams[8], 99, mapForm);
+                    p10 = new ArtificialPlayer(teams[9], 99, mapForm);
+                    p11 = new ArtificialPlayer(teams[10], 99, mapForm);
+                    p12 = new ArtificialPlayer(teams[11], 99, mapForm);
+                    p13 = new ArtificialPlayer(teams[12], 99, mapForm);
                     return new Player[] { p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13 };
                 default:
                     p1 = new Player(teams[0], rand.Next(0, 5));
@@ -315,6 +314,12 @@ namespace warCWBv2
                     text = "Conquistar CIC, BAIRRO NOVO e BOA VISTA";
                     break;
                 case 5:
+                    text = "Conquistar BOQUEIRÃO, CAJURU e SANTA FELICIDADE";
+                    break;
+                case 6:
+                    text = "Conquistar CIC, MATRIZ e BOQUEIRÃO";
+                    break;
+                case 99:
                     text = "ASFALTAR CURITIBA (TODOS TERRITÓRIOS)";
                     break;
             }

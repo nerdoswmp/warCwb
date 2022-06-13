@@ -53,6 +53,16 @@ namespace warCWBv2
                     || x.GetName() == "BOA VISTA").ToArray();
                     break;
                 case 5:
+                    //"Conquistar BOQUEIRÃO, CAJURU e SANTA FELICIDADE"
+                    objzonas = GetZonas().Where(x => x.GetName() == "BOQUEIRÃO" || x.GetName() == "CAJURU"
+                    || x.GetName() == "SANTA FELICIDADE").ToArray();
+                    break;
+                case 6:
+                    //"Conquistar CIC, MATRIZ e BOQUEIRÃO"
+                    objzonas = GetZonas().Where(x => x.GetName() == "CIC" || x.GetName() == "MATRIZ"
+                    || x.GetName() == "BOQUEIRÃO").ToArray();
+                    break;
+                case 99:
                     //"tudo nosso nada deles"
                     objzonas = GetZonas().Where(x => x.GetName() == "CIC" || x.GetName() == "BAIRRO NOVO"
                     || x.GetName() == "BOA VISTA" || x.GetName() == "PINNHEIRINHO" || x.GetName() == "PORTÃO"

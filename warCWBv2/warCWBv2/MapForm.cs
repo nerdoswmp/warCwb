@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Reflection;
+using NAudio.Wave;
 using static warCWBv2.GameScreen;
 
 namespace warCWBv2
@@ -27,6 +28,9 @@ namespace warCWBv2
         static List<Zona> zonas = CreateZonas();
         GameScreen gs = PreOff.gs;
         public MapManager mm = new MapManager();
+        Timer bomb = new Timer();
+        WaveStream boomsound = new WaveFileReader(Properties.Resources.boomnoise);
+        WaveOut wave = new WaveOut();
 
         public MapForm()
         {
@@ -35,8 +39,9 @@ namespace warCWBv2
 
         private void MapForm_Load(object sender, EventArgs e)
         {
-            gs.UpdateLabels();
+            //gs.UpdateLabels();
             pb.Image = new Bitmap(pb.Width, pb.Height);
+            pictureBox1.Image = new Bitmap(30, 30);
             g = Graphics.FromImage(pb.Image);
             g.Clear(Color.White);
             pb.Refresh();
@@ -44,8 +49,18 @@ namespace warCWBv2
             CreateTerritorio();
             Timer tm = new Timer();
             Timer stm = new Timer();
+            wave.Init(boomsound);
             tm.Interval = 60;
             stm.Interval = 100;
+            bomb.Interval = 1500;
+
+            bomb.Tick += delegate
+            {
+                pictureBox1.Visible = false;
+ 
+                bomb.Stop();
+            };
+            
 
             for (int i = 0; i < GetTerritorios().Count(); i++)
             {
@@ -60,15 +75,18 @@ namespace warCWBv2
                 this.pb.Controls.Add(labels[i]);
                 labels[i].Show();
             }
-
+            pictureBox1.Image = mm.boom;
+            pictureBox1.Location = new Point(800, 800);
             tm.Tick += delegate
             {
+                gs.UpdateLabels();
                 pb.Image = mm.Map;
             };
             tm.Start();
 
             stm.Tick += delegate
             {
+                
                 if (GetCurrentPlayer().GetType().ToString() == "warCWBv2.ArtificialPlayer")
                 {
                     gs.DisableSkip();
@@ -85,7 +103,7 @@ namespace warCWBv2
                                 turn0++;
                             }
 
-                            gs.UpdateLabels();
+                            //gs.UpdateLabels();
                             //MessageBox.Show(GetCurrentPlayer().ToString());
                             break;
 
@@ -101,7 +119,7 @@ namespace warCWBv2
                             }
                             
                             GetCurrentPlayer().NextAct();
-                            gs.UpdateLabels();
+                            //gs.UpdateLabels();
                             break;
                         case 2:
                             for (int i = 0; i < rand.Next(1, 4); i++)
@@ -115,11 +133,11 @@ namespace warCWBv2
                             }
 
                             GetCurrentPlayer().NextAct();
-                            gs.UpdateLabels();
+                            //gs.UpdateLabels();
                             break;
                         case 3:
                             NextPlayer();
-                            gs.UpdateLabels();
+                            //gs.UpdateLabels();
                             break;
                     }
 
@@ -132,7 +150,7 @@ namespace warCWBv2
             mm.ClearRandom(territorioList);
             mm.Close();
 
-            foreach(var l in labels)
+            foreach (var l in labels)
             {
                 Point ogpos = l.Location;
 
@@ -172,7 +190,7 @@ namespace warCWBv2
                             break;
                         case 3:
                             NextPlayer();
-                            gs.UpdateLabels();
+                            //gs.UpdateLabels();
                             break;
                     };
                     EndTurnValidate();
@@ -185,7 +203,7 @@ namespace warCWBv2
                         turn0++;
                     }
 
-                    gs.UpdateLabels();
+                    //gs.UpdateLabels();
                 }
 
                 
@@ -225,7 +243,7 @@ namespace warCWBv2
                 mm.Close();
                 GetCurrentPlayer().NextAct();
                 tmp = tname;
-                gs.UpdateLabels();
+                //gs.UpdateLabels();
                 gs.UpdateTurn();
                 return true;
             }
@@ -233,7 +251,7 @@ namespace warCWBv2
             {
                 //Console.WriteLine("nope");
                 mm.Close();
-                gs.UpdateLabels();
+                //gs.UpdateLabels();
 
             }
             tmp = tname;       
@@ -242,6 +260,8 @@ namespace warCWBv2
         public void AttackTurn(MapManager mm, Point coord)
         {
             //Console.WriteLine(mea.Location.ToString());
+            
+            
             if (step == 0)
             {
                 mm.Initialize();
@@ -274,6 +294,11 @@ namespace warCWBv2
                     mm.Close();
                     if (FindTerritorio(tmp).GetAdjacente().Contains(territorio))
                     {
+                        bomb.Start();
+                        boomsound.CurrentTime = new TimeSpan(0L);
+                        new System.Threading.Thread(() => wave.Play()).Start();
+                        pictureBox1.Visible = true;
+                        pictureBox1.Location = territorio.GetCoord();
                         if (rand.Next(1, 7) > 3)
                         {
                             territorio.RemoveTroops(2);
@@ -307,7 +332,7 @@ namespace warCWBv2
 
                             mm.Clear(GetCurrentPlayer().GetTeam().GetColor(), territorio.GetCoord(), 1);
                             //GetCurrentPlayer().NextAct();
-                            gs.UpdateLabels();
+                            //gs.UpdateLabels();
                             gs.UpdateTurn();
                             step = 0;
 
@@ -319,7 +344,7 @@ namespace warCWBv2
                         {
                             FindTerritorio(tmp).SetTroop(1);
                             //GetCurrentPlayer().NextAct();
-                            gs.UpdateLabels();
+                            //gs.UpdateLabels();
                             gs.UpdateTurn();
 
                             step = 0;
@@ -336,12 +361,13 @@ namespace warCWBv2
                         mm.Initialize();
                         mm.Clear(GetAllTeams().Where(x => x.GetTerritorios().Contains(territorio))
                                 .Single().GetColor(), coord, 1);
-                        gs.UpdateLabels();
+                        //gs.UpdateLabels();
                         mm.Close();
                     }
                 }
             }
-            gs.UpdateLabels();
+            //boom.Visible = false;
+            //gs.UpdateLabels();
         }
         public void MoveTurn(MapManager mm, Point coord)
         {
@@ -402,7 +428,7 @@ namespace warCWBv2
                     //Console.WriteLine("nope");
                 }
             }
-            gs.UpdateLabels();
+            //gs.UpdateLabels();
         }
         public static List<Zona> CreateZonas()
         {
@@ -667,6 +693,7 @@ namespace warCWBv2
             mm.ReClear();
             mm.Close();
         }
+
     }
 
 }
