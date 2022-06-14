@@ -19,6 +19,7 @@ namespace warCWBv2
         MapForm mp;
         MapManager mm;
         Territorio temp = new Territorio();
+        Territorio[] moveto = new Territorio[2];
 
         public ArtificialPlayer(Team team, int obj, MapForm mp) : base(team, obj)
         {
@@ -100,6 +101,12 @@ namespace warCWBv2
                 switch (act)
                 {
                     case 0:
+
+                        if (team.GetTerritorios().Contains(moveto[1]) && moveto[1] != null)
+                        {
+                            return moveto[0].GetCoord();
+                        }
+
                         for (int i = 0; i < objzonas.Length; i++)
                         {
                             bool haster = objzonas[i].GetTerritorios().Any(t => team.GetTerritorios().Contains(t));
@@ -112,11 +119,13 @@ namespace warCWBv2
                                     Territorio insert;
                                     if (decide >= 50)
                                     {
-                                        insert = team.GetTerritorios().Where(x => x.GetName() == t.GetName() && x.GetTroops() > 1).FirstOrDefault();
+                                        insert = team.GetTerritorios().Where(x => x.GetName() == t.GetName() && x.GetTroops() > 1)
+                                            .OrderBy(a => rand.Next()).FirstOrDefault();
                                     }
                                     else
                                     {
-                                        insert = team.GetTerritorios().Where(x => x.GetName() == t.GetName() && x.GetTroops() > 1).LastOrDefault();
+                                        insert = team.GetTerritorios().Where(x => x.GetName() == t.GetName() && x.GetTroops() > 1)
+                                            .OrderBy(a => rand.Next()).LastOrDefault();
                                     }
                                     if (insert != null && !insert.GetAdjacente().All(x => team.GetTerritorios().Contains(x))){
                                         place = insert.GetCoord();
@@ -134,11 +143,13 @@ namespace warCWBv2
                                     Territorio insert;
                                     if (decide >= 50)
                                     {
-                                        insert = team.GetTerritorios().Where(x => x.GetName() == t.GetName() && x.GetTroops() > 1).FirstOrDefault();
+                                        insert = team.GetTerritorios().Where(x => x.GetName() == t.GetName() && x.GetTroops() > 1)
+                                            .OrderBy(a => rand.Next()).FirstOrDefault();
                                     }
                                     else
                                     {
-                                        insert = team.GetTerritorios().Where(x => x.GetName() == t.GetName() && x.GetTroops() > 1).LastOrDefault();
+                                        insert = team.GetTerritorios().Where(x => x.GetName() == t.GetName() && x.GetTroops() > 1)
+                                            .OrderBy(a => rand.Next()).LastOrDefault();
                                     }
                                     
                                     if (insert != null && !insert.GetAdjacente().All(x => team.GetTerritorios().Contains(x)))
@@ -153,7 +164,8 @@ namespace warCWBv2
                         }
                         return place;
                     case 1:
-                        Territorio[] adjacentes = temp.GetAdjacente().Where(x => x.GetTroops() <= temp.GetTroops()).ToArray();
+                        Territorio[] adjacentes = temp.GetAdjacente().Where(x => x.GetTroops() <= temp.GetTroops())
+                            .OrderBy(a => rand.Next()).ToArray();
                         //Console.WriteLine("###########################################################################");
                         //foreach (var adjacente in adjacentes)
                         //{
@@ -175,7 +187,8 @@ namespace warCWBv2
 
                                 if (haster && team.GetTerritorios().Contains(adjacentes[j]) == false && temp.GetTroops() > 1)
                                 {
-                                    Console.WriteLine($"attacked {adjacentes[j].GetCoord()}");
+                                    Console.WriteLine($"purposefully attacked {adjacentes[j].GetCoord()}");
+                                    
                                     return adjacentes[j].GetCoord();
                                 }
                             }
@@ -184,50 +197,60 @@ namespace warCWBv2
                             {
                                 if (team.GetTerritorios().Contains(adjacentes[j]) == false && temp.GetTroops() > 1)
                                 {
+                                    moveto[0] = temp;
+                                    moveto[1] = adjacentes[j];
                                     Console.WriteLine($"attacked {adjacentes[j].GetCoord()}");
                                     return adjacentes[j].GetCoord();
                                 }
                             }
                         }
+                        moveto[0] = null;
+                        moveto[1] = null;
                         break;
                     case 2:
-                        adjacentes = temp.GetAdjacente().Where(x => x.GetTroops() <= temp.GetTroops()).ToArray();
+                        adjacentes = temp.GetAdjacente().Where(x => x.GetTroops() <= temp.GetTroops())
+                            .OrderBy(a => rand.Next()).ToArray();
                         //Console.WriteLine("###########################################################################");
                         //foreach (var adjacente in adjacentes)
                         //{
                         //    Console.WriteLine(adjacente.GetName());
                         //}
-
-
-                        for (int i = 0; i < objzonas.Length; i++)
+                        if (team.GetTerritorios().Contains(moveto[1]) && moveto[1] != null)
                         {
-                            //Console.WriteLine($"{objzonas[i].GetName()} ###################################");
-                            //foreach (var z in objzonas[i].GetTerritorios())
-                            //{
-                            //    Console.WriteLine(z.GetName());
-                            //}
-
-                            for (int j = 0; j < adjacentes.Length; j++)
-                            {
-                                bool haster = objzonas[i].GetTerritorios().Contains(adjacentes[j]);
-
-                                if (haster && team.GetTerritorios().Contains(adjacentes[j]) == true && temp.GetTroops() > 1)
-                                {
-                                    Console.WriteLine($"attacked {adjacentes[j].GetCoord()}");
-                                    return adjacentes[j].GetCoord();
-                                }
-                            }
-
-                            for (int j = 0; j < adjacentes.Length; j++)
-                            {
-                                if (team.GetTerritorios().Contains(adjacentes[j]) == true && temp.GetTroops() > 1)
-                                {
-                                    Console.WriteLine($"attacked {adjacentes[j].GetCoord()}");
-                                    return adjacentes[j].GetCoord();
-                                }
-                            }
+                            return moveto[1].GetCoord();
                         }
-                        break;
+                        else
+                        {
+                            for (int i = 0; i < objzonas.Length; i++)
+                            {
+                                //Console.WriteLine($"{objzonas[i].GetName()} ###################################");
+                                //foreach (var z in objzonas[i].GetTerritorios())
+                                //{
+                                //    Console.WriteLine(z.GetName());
+                                //}
+
+                                for (int j = 0; j < adjacentes.Length; j++)
+                                {
+                                    bool haster = objzonas[i].GetTerritorios().Contains(adjacentes[j]);
+
+                                    if (haster && team.GetTerritorios().Contains(adjacentes[j]) == true && temp.GetTroops() > 1)
+                                    {
+                                        Console.WriteLine($"attacked {adjacentes[j].GetCoord()}");
+                                        return adjacentes[j].GetCoord();
+                                    }
+                                }
+
+                                for (int j = 0; j < adjacentes.Length; j++)
+                                {
+                                    if (team.GetTerritorios().Contains(adjacentes[j]) == true && temp.GetTroops() > 1)
+                                    {
+                                        Console.WriteLine($"attacked {adjacentes[j].GetCoord()}");
+                                        return adjacentes[j].GetCoord();
+                                    }
+                                }
+                            }
+                            break;
+                        }
                     default:
                         return place;
                 }

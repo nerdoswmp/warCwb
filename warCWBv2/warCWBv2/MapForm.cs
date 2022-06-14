@@ -108,10 +108,10 @@ namespace warCWBv2
                             break;
 
                         case 1:
-                            for (int i = 0; i < rand.Next(2, 6); i++)
+                            for (int i = 0; i < rand.Next(2, 10); i++)
                             {
                                 AttackTurn(mm, a1.Play(0));
-                                for (int j = 0; j < rand.Next(2,15); j++)
+                                for (int j = 0; j < rand.Next(10,55); j++)
                                 {
                                     AttackTurn(mm, a1.Play(1));
                                 }
@@ -125,10 +125,7 @@ namespace warCWBv2
                             for (int i = 0; i < rand.Next(1, 4); i++)
                             {
                                 MoveTurn(mm, a1.Play(0));
-                                for (int j = 0; j < rand.Next(1, 4); j++)
-                                {
-                                    MoveTurn(mm, a1.Play(2));
-                                }
+                                MoveTurn(mm, a1.Play(2));
                                 ResetVars();
                             }
 
@@ -306,7 +303,7 @@ namespace warCWBv2
                             {
                                 territorio.SetTroop(0);
                             }
-                            FindTerritorio(tmp).RemoveTroops(1);
+                            FindTerritorio(tmp).RemoveTroops(rand.Next(1,3));
 
                             UpdateTroopLabels();
                         }

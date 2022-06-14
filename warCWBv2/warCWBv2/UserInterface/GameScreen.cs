@@ -189,46 +189,46 @@ namespace warCWBv2
             switch (amount)
             {
                 case 2:
-                    p1 = new Player(teams[0], rand.Next(0, 5));
-                    p2 = new Player(teams[1], rand.Next(0, 5));
+                    p1 = new Player(teams[0], rand.Next(0, 7));
+                    p2 = new Player(teams[1], rand.Next(0, 7));
                     return new Player[] { p1, p2 };
                 case 3:
-                    p1 = new Player(teams[0], rand.Next(0, 5));
-                    p2 = new Player(teams[1], rand.Next(0, 5));
-                    p3 = new Player(teams[2], rand.Next(0, 5));
+                    p1 = new Player(teams[0], rand.Next(0, 7));
+                    p2 = new Player(teams[1], rand.Next(0, 7));
+                    p3 = new Player(teams[2], rand.Next(0, 7));
                     return new Player[] { p1, p2, p3 };
                 case 4:
-                    p1 = new Player(teams[0], rand.Next(0, 5));
-                    p2 = new Player(teams[1], rand.Next(0, 5));
-                    p3 = new Player(teams[2], rand.Next(0, 5));
-                    p4 = new Player(teams[3], rand.Next(0, 5));
+                    p1 = new Player(teams[0], rand.Next(0, 7));
+                    p2 = new Player(teams[1], rand.Next(0, 7));
+                    p3 = new Player(teams[2], rand.Next(0, 7));
+                    p4 = new Player(teams[3], rand.Next(0, 7));
                     return new Player[] { p1, p2, p3, p4 };
                 case 5:
-                    p1 = new Player(teams[0], rand.Next(0, 5));
-                    p2 = new ArtificialPlayer(teams[1], rand.Next(0, 5), mapForm);
+                    p1 = new Player(teams[0], rand.Next(0, 7));
+                    p2 = new ArtificialPlayer(teams[1], rand.Next(0, 7), mapForm);
                     return new Player[] { p1, p2 };
                 case 6:
-                    p1 = new Player(teams[0], rand.Next(0, 5));
-                    p2 = new ArtificialPlayer(teams[1], rand.Next(0, 5), mapForm);
-                    p3 = new ArtificialPlayer(teams[2], rand.Next(0, 5), mapForm);
+                    p1 = new Player(teams[0], rand.Next(0, 7));
+                    p2 = new ArtificialPlayer(teams[1], rand.Next(0, 7), mapForm);
+                    p3 = new ArtificialPlayer(teams[2], rand.Next(0, 7), mapForm);
                     return new Player[] { p1, p2, p3 };
                 case 7:
-                    p1 = new Player(teams[0], rand.Next(0, 5));
-                    p2 = new ArtificialPlayer(teams[1], rand.Next(0, 5), mapForm);
-                    p3 = new ArtificialPlayer(teams[2], rand.Next(0, 5), mapForm);
-                    p4 = new ArtificialPlayer(teams[3], rand.Next(0, 5), mapForm);
+                    p1 = new Player(teams[0], rand.Next(0, 7));
+                    p2 = new ArtificialPlayer(teams[1], rand.Next(0, 7), mapForm);
+                    p3 = new ArtificialPlayer(teams[2], rand.Next(0, 7), mapForm);
+                    p4 = new ArtificialPlayer(teams[3], rand.Next(0, 7), mapForm);
                     return new Player[] { p1, p2, p3, p4 };
                 case 8:
-                    p1 = new Player(teams[0], rand.Next(0, 5));
-                    p2 = new Player(teams[1], rand.Next(0, 5));
-                    p3 = new ArtificialPlayer(teams[2], rand.Next(0, 5), mapForm);
-                    p4 = new ArtificialPlayer(teams[3], rand.Next(0, 5), mapForm);
+                    p1 = new Player(teams[0], rand.Next(0, 7));
+                    p2 = new Player(teams[1], rand.Next(0, 7));
+                    p3 = new ArtificialPlayer(teams[2], rand.Next(0, 7), mapForm);
+                    p4 = new ArtificialPlayer(teams[3], rand.Next(0, 7), mapForm);
                     return new Player[] { p1, p2, p3, p4 };
                 case 9:
-                    p1 = new Player(teams[0], rand.Next(0, 5));
-                    p2 = new Player(teams[1], rand.Next(0, 5));
-                    p3 = new Player(teams[2], rand.Next(0, 5));
-                    p4 = new ArtificialPlayer(teams[3], rand.Next(0, 5), mapForm);
+                    p1 = new Player(teams[0], rand.Next(0, 7));
+                    p2 = new Player(teams[1], rand.Next(0, 7));
+                    p3 = new Player(teams[2], rand.Next(0, 7));
+                    p4 = new ArtificialPlayer(teams[3], rand.Next(0, 7), mapForm);
                     return new Player[] { p1, p2, p3, p4 };
                 case 10:
                     p1 = new Player(teams[0], 99);
@@ -246,10 +246,10 @@ namespace warCWBv2
                     p13 = new ArtificialPlayer(teams[12], 99, mapForm);
                     return new Player[] { p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13 };
                 default:
-                    p1 = new Player(teams[0], rand.Next(0, 5));
-                    p2 = new Player(teams[1], rand.Next(0, 5));
-                    p3 = new Player(teams[2], rand.Next(0, 5));
-                    p4 = new Player(teams[3], rand.Next(0, 5));
+                    p1 = new Player(teams[0], rand.Next(0, 7));
+                    p2 = new Player(teams[1], rand.Next(0, 7));
+                    p3 = new Player(teams[2], rand.Next(0, 7));
+                    p4 = new Player(teams[3], rand.Next(0, 7));
                     return new Player[] { p1, p2, p3, p4 };
             }
         }

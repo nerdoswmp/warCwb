@@ -19,7 +19,7 @@ namespace warCWBv2
         private byte[] bytes = null;
         private int stride = 0;
         private BitmapData data = null;
-        private Random rand = new Random();
+        private Random rand = new Random(Guid.NewGuid().GetHashCode());
 
         public void Initialize()
         {
